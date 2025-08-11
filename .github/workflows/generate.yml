@@ -1,0 +1,51 @@
+name: Generate TS Client
+
+on:
+  schedule:
+    - cron: "0 3 * * *" # daily at 03:00 UTC
+  workflow_dispatch: {}
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install buf
+        uses: bufbuild/buf-setup-action@v1
+
+      - name: Install deps
+        run: |
+          npm ci
+
+      - name: Generate
+        run: |
+          chmod +x ./scripts/update-proto.sh
+          ./scripts/update-proto.sh
+
+      - name: Build
+        run: npm run build
+
+      - name: Check for changes
+        id: verify-changed-files
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "changed=true" >> $GITHUB_OUTPUT
+            echo "Files have changed:"
+            git status --porcelain
+          else
+            echo "changed=false" >> $GITHUB_OUTPUT
+            echo "No changes detected"
+          fi
+
+      - name: Commit changes
+        if: steps.verify-changed-files.outputs.changed == 'true'
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: update client from upstream proto"

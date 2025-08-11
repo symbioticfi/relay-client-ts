@@ -1,0 +1,28 @@
+{
+  "name": "@symbioticfi/relay-client-ts-examples",
+  "version": "0.1.0",
+  "description": "Examples for the Symbiotic Relay TypeScript client",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "preinstall": "cd .. && npm install",
+    "postinstall": "npm run build:client",
+    "build:client": "cd .. && npm run build",
+    "basic-usage": "tsx basic-usage.ts",
+    "build": "tsc",
+    "dev": "tsx --watch basic-usage.ts",
+    "check": "tsc --noEmit",
+    "setup": "npm install && npm run build:client"
+  },
+  "dependencies": {
+    "@bufbuild/protobuf": "^2.0.0",
+    "@connectrpc/connect": "^2.0.0",
+    "@connectrpc/connect-node": "^2.0.0",
+    "@symbioticfi/relay-client-ts": "file:.."
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.0",
+    "tsx": "^4.0.0",
+    "typescript": "^5.5.0"
+  }
+}
