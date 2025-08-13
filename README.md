@@ -1,4 +1,4 @@
-Relay Client (TypeScript)
+# Relay Client (TypeScript)
 
 TypeScript client for the Symbiotic Relay built with Connect RPC and @bufbuild/protobuf.
 
