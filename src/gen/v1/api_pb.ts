@@ -12,7 +12,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file v1/api.proto.
  */
 export const file_v1_api: GenFile = /*@__PURE__*/
-  fileDesc("Cgx2MS9hcGkucHJvdG8SDGFwaS5wcm90by52MSJmChJTaWduTWVzc2FnZVJlcXVlc3QSDwoHa2V5X3RhZxgBIAEoDRIPCgdtZXNzYWdlGAIgASgMEhsKDnJlcXVpcmVkX2Vwb2NoGAMgASgESACIAQFCEQoPX3JlcXVpcmVkX2Vwb2NoImoKFlNpZ25NZXNzYWdlV2FpdFJlcXVlc3QSDwoHa2V5X3RhZxgBIAEoDRIPCgdtZXNzYWdlGAIgASgMEhsKDnJlcXVpcmVkX2Vwb2NoGAMgASgESACIAQFCEQoPX3JlcXVpcmVkX2Vwb2NoIjoKE1NpZ25NZXNzYWdlUmVzcG9uc2USFAoMcmVxdWVzdF9oYXNoGAEgASgJEg0KBWVwb2NoGAIgASgEItICChdTaWduTWVzc2FnZVdhaXRSZXNwb25zZRIrCgZzdGF0dXMYASABKA4yGy5hcGkucHJvdG8udjEuU2lnbmluZ1N0YXR1cxIUCgxyZXF1ZXN0X2hhc2gYAiABKAkSDQoFZXBvY2gYAyABKAQSIQoUY3VycmVudF92b3RpbmdfcG93ZXIYBCABKAlIAIgBARIYChBzaWduZXJfb3BlcmF0b3JzGAUgAygJEj4KEWFnZ3JlZ2F0aW9uX3Byb29mGAYgASgLMh4uYXBpLnByb3RvLnYxLkFnZ3JlZ2F0aW9uUHJvb2ZIAYgBARIvCgVlcnJvchgHIAEoCzIbLmFwaS5wcm90by52MS5FcnJvclJlc3BvbnNlSAKIAQFCFwoVX2N1cnJlbnRfdm90aW5nX3Bvd2VyQhQKEl9hZ2dyZWdhdGlvbl9wcm9vZkIICgZfZXJyb3IiMgoaR2V0QWdncmVnYXRpb25Qcm9vZlJlcXVlc3QSFAoMcmVxdWVzdF9oYXNoGAEgASgJIhgKFkdldEN1cnJlbnRFcG9jaFJlcXVlc3QiGgoYR2V0U3VnZ2VzdGVkRXBvY2hSZXF1ZXN0IiwKFEdldFNpZ25hdHVyZXNSZXF1ZXN0EhQKDHJlcXVlc3RfaGFzaBgBIAEoCSJEChVHZXRTaWduYXR1cmVzUmVzcG9uc2USKwoKc2lnbmF0dXJlcxgBIAMoCzIXLmFwaS5wcm90by52MS5TaWduYXR1cmUiMgoaR2V0U2lnbmF0dXJlUmVxdWVzdFJlcXVlc3QSFAoMcmVxdWVzdF9oYXNoGAEgASgJIjMKG0dldEFnZ3JlZ2F0aW9uU3RhdHVzUmVxdWVzdBIUCgxyZXF1ZXN0X2hhc2gYASABKAkiNgoWR2V0VmFsaWRhdG9yU2V0UmVxdWVzdBISCgVlcG9jaBgBIAEoBEgAiAEBQggKBl9lcG9jaCJYChdHZXRDdXJyZW50RXBvY2hSZXNwb25zZRINCgVlcG9jaBgBIAEoBBIuCgpzdGFydF90aW1lGAIgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcCJaChlHZXRTdWdnZXN0ZWRFcG9jaFJlc3BvbnNlEg0KBWVwb2NoGAEgASgEEi4KCnN0YXJ0X3RpbWUYAiABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wIlcKG0dldFNpZ25hdHVyZVJlcXVlc3RSZXNwb25zZRIPCgdrZXlfdGFnGAEgASgNEg8KB21lc3NhZ2UYAiABKAwSFgoOcmVxdWlyZWRfZXBvY2gYAyABKAQiWAobR2V0QWdncmVnYXRpb25Qcm9vZlJlc3BvbnNlEjkKEWFnZ3JlZ2F0aW9uX3Byb29mGAEgASgLMh4uYXBpLnByb3RvLnYxLkFnZ3JlZ2F0aW9uUHJvb2YiUgoQQWdncmVnYXRpb25Qcm9vZhIZChF2ZXJpZmljYXRpb25fdHlwZRgBIAEoDRIUCgxtZXNzYWdlX2hhc2gYAiABKAwSDQoFcHJvb2YYAyABKAwiVgocR2V0QWdncmVnYXRpb25TdGF0dXNSZXNwb25zZRIcChRjdXJyZW50X3ZvdGluZ19wb3dlchgBIAEoCRIYChBzaWduZXJfb3BlcmF0b3JzGAIgAygJIkgKCVNpZ25hdHVyZRIRCglzaWduYXR1cmUYASABKAwSFAoMbWVzc2FnZV9oYXNoGAIgASgMEhIKCnB1YmxpY19rZXkYAyABKAwioQIKF0dldFZhbGlkYXRvclNldFJlc3BvbnNlEg8KB3ZlcnNpb24YASABKA0SGAoQcmVxdWlyZWRfa2V5X3RhZxgCIAEoDRINCgVlcG9jaBgDIAEoBBI1ChFjYXB0dXJlX3RpbWVzdGFtcBgEIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXASGAoQcXVvcnVtX3RocmVzaG9sZBgFIAEoCRIcChRwcmV2aW91c19oZWFkZXJfaGFzaBgGIAEoCRIwCgZzdGF0dXMYByABKA4yIC5hcGkucHJvdG8udjEuVmFsaWRhdG9yU2V0U3RhdHVzEisKCnZhbGlkYXRvcnMYCCADKAsyFy5hcGkucHJvdG8udjEuVmFsaWRhdG9yIpUBCglWYWxpZGF0b3ISEAoIb3BlcmF0b3IYASABKAkSFAoMdm90aW5nX3Bvd2VyGAIgASgJEhEKCWlzX2FjdGl2ZRgDIAEoCBIfCgRrZXlzGAQgAygLMhEuYXBpLnByb3RvLnYxLktleRIsCgZ2YXVsdHMYBSADKAsyHC5hcGkucHJvdG8udjEuVmFsaWRhdG9yVmF1bHQiIwoDS2V5EgsKA3RhZxgBIAEoDRIPCgdwYXlsb2FkGAIgASgMIkcKDlZhbGlkYXRvclZhdWx0EhAKCGNoYWluX2lkGAEgASgEEg0KBXZhdWx0GAIgASgJEhQKDHZvdGluZ19wb3dlchgDIAEoCSJTCg1FcnJvclJlc3BvbnNlEhUKDWVycm9yX21lc3NhZ2UYASABKAkSKwoKZXJyb3JfY29kZRgCIAEoDjIXLmFwaS5wcm90by52MS5FcnJvckNvZGUqoQEKElZhbGlkYXRvclNldFN0YXR1cxIkCiBWQUxJREFUT1JfU0VUX1NUQVRVU19VTlNQRUNJRklFRBAAEiAKHFZBTElEQVRPUl9TRVRfU1RBVFVTX1BFTkRJTkcQARIfChtWQUxJREFUT1JfU0VUX1NUQVRVU19NSVNTRUQQAhIiCh5WQUxJREFUT1JfU0VUX1NUQVRVU19DT01NSVRURUQQAyrBAQoNU2lnbmluZ1N0YXR1cxIeChpTSUdOSU5HX1NUQVRVU19VTlNQRUNJRklFRBAAEhoKFlNJR05JTkdfU1RBVFVTX1BFTkRJTkcQARIfChtTSUdOSU5HX1NUQVRVU19BQ0NVTVVMQVRJTkcQAhIcChhTSUdOSU5HX1NUQVRVU19DT01QTEVURUQQAxIZChVTSUdOSU5HX1NUQVRVU19GQUlMRUQQBBIaChZTSUdOSU5HX1NUQVRVU19USU1FT1VUEAUqdwoJRXJyb3JDb2RlEhoKFkVSUk9SX0NPREVfVU5TUEVDSUZJRUQQABIWChJFUlJPUl9DT0RFX05PX0RBVEEQARIXChNFUlJPUl9DT0RFX0lOVEVSTkFMEAISHQoZRVJST1JfQ09ERV9OT1RfQUdHUkVHQVRPUhADMpIHChNTeW1iaW90aWNBUElTZXJ2aWNlElIKC1NpZ25NZXNzYWdlEiAuYXBpLnByb3RvLnYxLlNpZ25NZXNzYWdlUmVxdWVzdBohLmFwaS5wcm90by52MS5TaWduTWVzc2FnZVJlc3BvbnNlEmoKE0dldEFnZ3JlZ2F0aW9uUHJvb2YSKC5hcGkucHJvdG8udjEuR2V0QWdncmVnYXRpb25Qcm9vZlJlcXVlc3QaKS5hcGkucHJvdG8udjEuR2V0QWdncmVnYXRpb25Qcm9vZlJlc3BvbnNlEl4KD0dldEN1cnJlbnRFcG9jaBIkLmFwaS5wcm90by52MS5HZXRDdXJyZW50RXBvY2hSZXF1ZXN0GiUuYXBpLnByb3RvLnYxLkdldEN1cnJlbnRFcG9jaFJlc3BvbnNlEmQKEUdldFN1Z2dlc3RlZEVwb2NoEiYuYXBpLnByb3RvLnYxLkdldFN1Z2dlc3RlZEVwb2NoUmVxdWVzdBonLmFwaS5wcm90by52MS5HZXRTdWdnZXN0ZWRFcG9jaFJlc3BvbnNlElgKDUdldFNpZ25hdHVyZXMSIi5hcGkucHJvdG8udjEuR2V0U2lnbmF0dXJlc1JlcXVlc3QaIy5hcGkucHJvdG8udjEuR2V0U2lnbmF0dXJlc1Jlc3BvbnNlEmoKE0dldFNpZ25hdHVyZVJlcXVlc3QSKC5hcGkucHJvdG8udjEuR2V0U2lnbmF0dXJlUmVxdWVzdFJlcXVlc3QaKS5hcGkucHJvdG8udjEuR2V0U2lnbmF0dXJlUmVxdWVzdFJlc3BvbnNlEm0KFEdldEFnZ3JlZ2F0aW9uU3RhdHVzEikuYXBpLnByb3RvLnYxLkdldEFnZ3JlZ2F0aW9uU3RhdHVzUmVxdWVzdBoqLmFwaS5wcm90by52MS5HZXRBZ2dyZWdhdGlvblN0YXR1c1Jlc3BvbnNlEl4KD0dldFZhbGlkYXRvclNldBIkLmFwaS5wcm90by52MS5HZXRWYWxpZGF0b3JTZXRSZXF1ZXN0GiUuYXBpLnByb3RvLnYxLkdldFZhbGlkYXRvclNldFJlc3BvbnNlEmAKD1NpZ25NZXNzYWdlV2FpdBIkLmFwaS5wcm90by52MS5TaWduTWVzc2FnZVdhaXRSZXF1ZXN0GiUuYXBpLnByb3RvLnYxLlNpZ25NZXNzYWdlV2FpdFJlc3BvbnNlMAFCmQEKEGNvbS5hcGkucHJvdG8udjFCCEFwaVByb3RvUAFaKWdpdGh1Yi5jb20vc3ltYmlvdGljZmkvcmVsYXkvYXBpL3Byb3RvL3YxogIDQVBYqgIMQXBpLlByb3RvLlYxygIMQXBpXFByb3RvXFYx4gIYQXBpXFByb3RvXFYxXEdQQk1ldGFkYXRh6gIOQXBpOjpQcm90bzo6VjFiBnByb3RvMw", [file_google_protobuf_timestamp]);
+  fileDesc("Cgx2MS9hcGkucHJvdG8SDGFwaS5wcm90by52MSJmChJTaWduTWVzc2FnZVJlcXVlc3QSDwoHa2V5X3RhZxgBIAEoDRIPCgdtZXNzYWdlGAIgASgMEhsKDnJlcXVpcmVkX2Vwb2NoGAMgASgESACIAQFCEQoPX3JlcXVpcmVkX2Vwb2NoImoKFlNpZ25NZXNzYWdlV2FpdFJlcXVlc3QSDwoHa2V5X3RhZxgBIAEoDRIPCgdtZXNzYWdlGAIgASgMEhsKDnJlcXVpcmVkX2Vwb2NoGAMgASgESACIAQFCEQoPX3JlcXVpcmVkX2Vwb2NoIjoKE1NpZ25NZXNzYWdlUmVzcG9uc2USFAoMcmVxdWVzdF9oYXNoGAEgASgJEg0KBWVwb2NoGAIgASgEIsEBChdTaWduTWVzc2FnZVdhaXRSZXNwb25zZRIrCgZzdGF0dXMYASABKA4yGy5hcGkucHJvdG8udjEuU2lnbmluZ1N0YXR1cxIUCgxyZXF1ZXN0X2hhc2gYAiABKAkSDQoFZXBvY2gYAyABKAQSPgoRYWdncmVnYXRpb25fcHJvb2YYBiABKAsyHi5hcGkucHJvdG8udjEuQWdncmVnYXRpb25Qcm9vZkgAiAEBQhQKEl9hZ2dyZWdhdGlvbl9wcm9vZiIyChpHZXRBZ2dyZWdhdGlvblByb29mUmVxdWVzdBIUCgxyZXF1ZXN0X2hhc2gYASABKAkiGAoWR2V0Q3VycmVudEVwb2NoUmVxdWVzdCIaChhHZXRTdWdnZXN0ZWRFcG9jaFJlcXVlc3QiLAoUR2V0U2lnbmF0dXJlc1JlcXVlc3QSFAoMcmVxdWVzdF9oYXNoGAEgASgJIkQKFUdldFNpZ25hdHVyZXNSZXNwb25zZRIrCgpzaWduYXR1cmVzGAEgAygLMhcuYXBpLnByb3RvLnYxLlNpZ25hdHVyZSIyChpHZXRTaWduYXR1cmVSZXF1ZXN0UmVxdWVzdBIUCgxyZXF1ZXN0X2hhc2gYASABKAkiMwobR2V0QWdncmVnYXRpb25TdGF0dXNSZXF1ZXN0EhQKDHJlcXVlc3RfaGFzaBgBIAEoCSI2ChZHZXRWYWxpZGF0b3JTZXRSZXF1ZXN0EhIKBWVwb2NoGAEgASgESACIAQFCCAoGX2Vwb2NoIlgKF0dldEN1cnJlbnRFcG9jaFJlc3BvbnNlEg0KBWVwb2NoGAEgASgEEi4KCnN0YXJ0X3RpbWUYAiABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wIloKGUdldFN1Z2dlc3RlZEVwb2NoUmVzcG9uc2USDQoFZXBvY2gYASABKAQSLgoKc3RhcnRfdGltZRgCIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXAiVwobR2V0U2lnbmF0dXJlUmVxdWVzdFJlc3BvbnNlEg8KB2tleV90YWcYASABKA0SDwoHbWVzc2FnZRgCIAEoDBIWCg5yZXF1aXJlZF9lcG9jaBgDIAEoBCJYChtHZXRBZ2dyZWdhdGlvblByb29mUmVzcG9uc2USOQoRYWdncmVnYXRpb25fcHJvb2YYASABKAsyHi5hcGkucHJvdG8udjEuQWdncmVnYXRpb25Qcm9vZiJSChBBZ2dyZWdhdGlvblByb29mEhkKEXZlcmlmaWNhdGlvbl90eXBlGAEgASgNEhQKDG1lc3NhZ2VfaGFzaBgCIAEoDBINCgVwcm9vZhgDIAEoDCJWChxHZXRBZ2dyZWdhdGlvblN0YXR1c1Jlc3BvbnNlEhwKFGN1cnJlbnRfdm90aW5nX3Bvd2VyGAEgASgJEhgKEHNpZ25lcl9vcGVyYXRvcnMYAiADKAkiSAoJU2lnbmF0dXJlEhEKCXNpZ25hdHVyZRgBIAEoDBIUCgxtZXNzYWdlX2hhc2gYAiABKAwSEgoKcHVibGljX2tleRgDIAEoDCKhAgoXR2V0VmFsaWRhdG9yU2V0UmVzcG9uc2USDwoHdmVyc2lvbhgBIAEoDRIYChByZXF1aXJlZF9rZXlfdGFnGAIgASgNEg0KBWVwb2NoGAMgASgEEjUKEWNhcHR1cmVfdGltZXN0YW1wGAQgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcBIYChBxdW9ydW1fdGhyZXNob2xkGAUgASgJEhwKFHByZXZpb3VzX2hlYWRlcl9oYXNoGAYgASgJEjAKBnN0YXR1cxgHIAEoDjIgLmFwaS5wcm90by52MS5WYWxpZGF0b3JTZXRTdGF0dXMSKwoKdmFsaWRhdG9ycxgIIAMoCzIXLmFwaS5wcm90by52MS5WYWxpZGF0b3IilQEKCVZhbGlkYXRvchIQCghvcGVyYXRvchgBIAEoCRIUCgx2b3RpbmdfcG93ZXIYAiABKAkSEQoJaXNfYWN0aXZlGAMgASgIEh8KBGtleXMYBCADKAsyES5hcGkucHJvdG8udjEuS2V5EiwKBnZhdWx0cxgFIAMoCzIcLmFwaS5wcm90by52MS5WYWxpZGF0b3JWYXVsdCIjCgNLZXkSCwoDdGFnGAEgASgNEg8KB3BheWxvYWQYAiABKAwiRwoOVmFsaWRhdG9yVmF1bHQSEAoIY2hhaW5faWQYASABKAQSDQoFdmF1bHQYAiABKAkSFAoMdm90aW5nX3Bvd2VyGAMgASgJKqEBChJWYWxpZGF0b3JTZXRTdGF0dXMSJAogVkFMSURBVE9SX1NFVF9TVEFUVVNfVU5TUEVDSUZJRUQQABIgChxWQUxJREFUT1JfU0VUX1NUQVRVU19QRU5ESU5HEAESHwobVkFMSURBVE9SX1NFVF9TVEFUVVNfTUlTU0VEEAISIgoeVkFMSURBVE9SX1NFVF9TVEFUVVNfQ09NTUlUVEVEEAMqoAEKDVNpZ25pbmdTdGF0dXMSHgoaU0lHTklOR19TVEFUVVNfVU5TUEVDSUZJRUQQABIaChZTSUdOSU5HX1NUQVRVU19QRU5ESU5HEAESHAoYU0lHTklOR19TVEFUVVNfQ09NUExFVEVEEAISGQoVU0lHTklOR19TVEFUVVNfRkFJTEVEEAMSGgoWU0lHTklOR19TVEFUVVNfVElNRU9VVBAEKncKCUVycm9yQ29kZRIaChZFUlJPUl9DT0RFX1VOU1BFQ0lGSUVEEAASFgoSRVJST1JfQ09ERV9OT19EQVRBEAESFwoTRVJST1JfQ09ERV9JTlRFUk5BTBACEh0KGUVSUk9SX0NPREVfTk9UX0FHR1JFR0FUT1IQAzKSBwoTU3ltYmlvdGljQVBJU2VydmljZRJSCgtTaWduTWVzc2FnZRIgLmFwaS5wcm90by52MS5TaWduTWVzc2FnZVJlcXVlc3QaIS5hcGkucHJvdG8udjEuU2lnbk1lc3NhZ2VSZXNwb25zZRJqChNHZXRBZ2dyZWdhdGlvblByb29mEiguYXBpLnByb3RvLnYxLkdldEFnZ3JlZ2F0aW9uUHJvb2ZSZXF1ZXN0GikuYXBpLnByb3RvLnYxLkdldEFnZ3JlZ2F0aW9uUHJvb2ZSZXNwb25zZRJeCg9HZXRDdXJyZW50RXBvY2gSJC5hcGkucHJvdG8udjEuR2V0Q3VycmVudEVwb2NoUmVxdWVzdBolLmFwaS5wcm90by52MS5HZXRDdXJyZW50RXBvY2hSZXNwb25zZRJkChFHZXRTdWdnZXN0ZWRFcG9jaBImLmFwaS5wcm90by52MS5HZXRTdWdnZXN0ZWRFcG9jaFJlcXVlc3QaJy5hcGkucHJvdG8udjEuR2V0U3VnZ2VzdGVkRXBvY2hSZXNwb25zZRJYCg1HZXRTaWduYXR1cmVzEiIuYXBpLnByb3RvLnYxLkdldFNpZ25hdHVyZXNSZXF1ZXN0GiMuYXBpLnByb3RvLnYxLkdldFNpZ25hdHVyZXNSZXNwb25zZRJqChNHZXRTaWduYXR1cmVSZXF1ZXN0EiguYXBpLnByb3RvLnYxLkdldFNpZ25hdHVyZVJlcXVlc3RSZXF1ZXN0GikuYXBpLnByb3RvLnYxLkdldFNpZ25hdHVyZVJlcXVlc3RSZXNwb25zZRJtChRHZXRBZ2dyZWdhdGlvblN0YXR1cxIpLmFwaS5wcm90by52MS5HZXRBZ2dyZWdhdGlvblN0YXR1c1JlcXVlc3QaKi5hcGkucHJvdG8udjEuR2V0QWdncmVnYXRpb25TdGF0dXNSZXNwb25zZRJeCg9HZXRWYWxpZGF0b3JTZXQSJC5hcGkucHJvdG8udjEuR2V0VmFsaWRhdG9yU2V0UmVxdWVzdBolLmFwaS5wcm90by52MS5HZXRWYWxpZGF0b3JTZXRSZXNwb25zZRJgCg9TaWduTWVzc2FnZVdhaXQSJC5hcGkucHJvdG8udjEuU2lnbk1lc3NhZ2VXYWl0UmVxdWVzdBolLmFwaS5wcm90by52MS5TaWduTWVzc2FnZVdhaXRSZXNwb25zZTABQpkBChBjb20uYXBpLnByb3RvLnYxQghBcGlQcm90b1ABWilnaXRodWIuY29tL3N5bWJpb3RpY2ZpL3JlbGF5L2FwaS9wcm90by92MaICA0FQWKoCDEFwaS5Qcm90by5WMcoCDEFwaVxQcm90b1xWMeICGEFwaVxQcm90b1xWMVxHUEJNZXRhZGF0YeoCDkFwaTo6UHJvdG86OlYxYgZwcm90bzM", [file_google_protobuf_timestamp]);
 
 /**
  * Request message for signing a message
@@ -21,7 +21,7 @@ export const file_v1_api: GenFile = /*@__PURE__*/
  */
 export type SignMessageRequest = Message<"api.proto.v1.SignMessageRequest"> & {
   /**
-   * Key tag identifier (0-255)
+   * Key tag identifier (0-127)
    *
    * @generated from field: uint32 key_tag = 1;
    */
@@ -56,7 +56,7 @@ export const SignMessageRequestSchema: GenMessage<SignMessageRequest> = /*@__PUR
  */
 export type SignMessageWaitRequest = Message<"api.proto.v1.SignMessageWaitRequest"> & {
   /**
-   * Key tag identifier (0-255)
+   * Key tag identifier (0-127)
    *
    * @generated from field: uint32 key_tag = 1;
    */
@@ -140,32 +140,11 @@ export type SignMessageWaitResponse = Message<"api.proto.v1.SignMessageWaitRespo
   epoch: bigint;
 
   /**
-   * Current voting power accumulated (only set when status is SIGNING_STATUS_ACCUMULATING)
-   *
-   * @generated from field: optional string current_voting_power = 4;
-   */
-  currentVotingPower?: string;
-
-  /**
-   * List of operators that have signed (only set when status is SIGNING_STATUS_ACCUMULATING)
-   *
-   * @generated from field: repeated string signer_operators = 5;
-   */
-  signerOperators: string[];
-
-  /**
    * Final aggregation proof (only set when status is SIGNING_STATUS_COMPLETED)
    *
    * @generated from field: optional api.proto.v1.AggregationProof aggregation_proof = 6;
    */
   aggregationProof?: AggregationProof;
-
-  /**
-   * Error details (only set when status is SIGNING_STATUS_FAILED)
-   *
-   * @generated from field: optional api.proto.v1.ErrorResponse error = 7;
-   */
-  error?: ErrorResponse;
 };
 
 /**
@@ -394,7 +373,7 @@ export const GetSuggestedEpochResponseSchema: GenMessage<GetSuggestedEpochRespon
  */
 export type GetSignatureRequestResponse = Message<"api.proto.v1.GetSignatureRequestResponse"> & {
   /**
-   * Key tag identifier (0-255)
+   * Key tag identifier (0-127)
    *
    * @generated from field: uint32 key_tag = 1;
    */
@@ -665,7 +644,7 @@ export const ValidatorSchema: GenMessage<Validator> = /*@__PURE__*/
  */
 export type Key = Message<"api.proto.v1.Key"> & {
   /**
-   * Key tag identifier (0-255)
+   * Key tag identifier (0-127)
    *
    * @generated from field: uint32 tag = 1;
    */
@@ -720,34 +699,6 @@ export type ValidatorVault = Message<"api.proto.v1.ValidatorVault"> & {
  */
 export const ValidatorVaultSchema: GenMessage<ValidatorVault> = /*@__PURE__*/
   messageDesc(file_v1_api, 22);
-
-/**
- * Error response
- *
- * @generated from message api.proto.v1.ErrorResponse
- */
-export type ErrorResponse = Message<"api.proto.v1.ErrorResponse"> & {
-  /**
-   * User-friendly error message
-   *
-   * @generated from field: string error_message = 1;
-   */
-  errorMessage: string;
-
-  /**
-   * Error code
-   *
-   * @generated from field: api.proto.v1.ErrorCode error_code = 2;
-   */
-  errorCode: ErrorCode;
-};
-
-/**
- * Describes the message api.proto.v1.ErrorResponse.
- * Use `create(ErrorResponseSchema)` to create a new message.
- */
-export const ErrorResponseSchema: GenMessage<ErrorResponse> = /*@__PURE__*/
-  messageDesc(file_v1_api, 23);
 
 /**
  * Validator set status enumeration
@@ -811,32 +762,25 @@ export enum SigningStatus {
   PENDING = 1,
 
   /**
-   * Signatures are being accumulated
-   *
-   * @generated from enum value: SIGNING_STATUS_ACCUMULATING = 2;
-   */
-  ACCUMULATING = 2,
-
-  /**
    * Signing process completed successfully with proof
    *
-   * @generated from enum value: SIGNING_STATUS_COMPLETED = 3;
+   * @generated from enum value: SIGNING_STATUS_COMPLETED = 2;
    */
-  COMPLETED = 3,
+  COMPLETED = 2,
 
   /**
    * Signing process failed
    *
-   * @generated from enum value: SIGNING_STATUS_FAILED = 4;
+   * @generated from enum value: SIGNING_STATUS_FAILED = 3;
    */
-  FAILED = 4,
+  FAILED = 3,
 
   /**
    * Signing request timed out
    *
-   * @generated from enum value: SIGNING_STATUS_TIMEOUT = 5;
+   * @generated from enum value: SIGNING_STATUS_TIMEOUT = 4;
    */
-  TIMEOUT = 5,
+  TIMEOUT = 4,
 }
 
 /**
