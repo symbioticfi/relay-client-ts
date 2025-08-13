@@ -194,14 +194,6 @@ async function main() {
           console.log("Request created, waiting for signatures...");
           break;
 
-        case SigningStatus.ACCUMULATING:
-          console.log(`Current voting power: ${streamResponse.currentVotingPower}`);
-          console.log(`Number of signers: ${streamResponse.signerOperators.length}`);
-          if (streamResponse.signerOperators.length > 0) {
-            console.log(`Signers: ${streamResponse.signerOperators.join(", ")}`);
-          }
-          break;
-
         case SigningStatus.COMPLETED:
           console.log("Signing completed!");
           if (streamResponse.aggregationProof) {
@@ -211,10 +203,7 @@ async function main() {
           return; // Exit the streaming loop
 
         case SigningStatus.FAILED:
-          if (streamResponse.error) {
-            console.log(`Signing failed: ${streamResponse.error.errorMessage}`);
-            console.log(`Error code: ${ErrorCode[streamResponse.error.errorCode]}`);
-          }
+          console.log("Failed to sign message");
           return;
 
         case SigningStatus.TIMEOUT:
