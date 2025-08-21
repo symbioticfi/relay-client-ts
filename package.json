@@ -1,14 +1,27 @@
 {
   "name": "@symbioticfi/relay-client-ts",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "TypeScript client for Symbiotic Relay",
+  "keywords": [
+    "symbiotic",
+    "relay",
+    "typescript",
+    "client",
+    "blockchain",
+    "grpc"
+  ],
+  "homepage": "https://github.com/symbioticfi/relay-client-ts#readme",
+  "bugs": {
+    "url": "https://github.com/symbioticfi/relay-client-ts/issues"
+  },
+  "author": "Symbiotic Team",
   "type": "module",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
     "dist",
-    "src/gen"
+    "src"
   ],
   "scripts": {
     "update:proto": "bash ./scripts/update-proto.sh",
@@ -21,9 +34,12 @@
     "@bufbuild/protobuf": "^2.0.0"
   },
   "devDependencies": {
-    "typescript": "^5.5.0",
+    "@eslint/js": "^9.33.0",
     "@types/node": "^20.12.0",
-    "eslint": "^9.0.0"
+    "@typescript-eslint/eslint-plugin": "^8.40.0",
+    "@typescript-eslint/parser": "^8.40.0",
+    "eslint": "^9.0.0",
+    "typescript": "^5.5.0"
   },
   "publishConfig": {
     "access": "public"
@@ -32,7 +48,7 @@
     "type": "git",
     "url": "git+https://github.com/symbioticfi/relay-client-ts.git"
   },
-  "license": "Apache-2.0",
+  "license": "BUSL-1.1",
   "engines": {
     "node": ">=20"
   }

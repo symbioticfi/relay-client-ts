@@ -1,0 +1,33 @@
+# Source files are included via "files" field in package.json
+# This file provides additional exclusions for security and cleanliness
+
+# Development files
+.eslintrc.json
+tsconfig.json
+buf.gen.yaml
+
+# Scripts and examples (already in separate packages)
+scripts/
+examples/
+
+# CI/CD and development
+.github/
+.npmrc
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+npm-debug.log*
+
+# Temporary files
+*.tmp
+*.temp
