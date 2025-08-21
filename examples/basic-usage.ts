@@ -16,7 +16,6 @@ import { createGrpcTransport } from "@connectrpc/connect-node";
 import { SymbioticAPIService } from "@symbioticfi/relay-client-ts";
 import {
   SigningStatus,
-  ErrorCode,
   GetCurrentEpochRequestSchema,
   GetSuggestedEpochRequestSchema,
   SignMessageRequestSchema,
@@ -24,6 +23,7 @@ import {
   GetSignaturesRequestSchema,
   GetValidatorSetRequestSchema,
   SignMessageWaitRequestSchema,
+  Signature,
 } from "@symbioticfi/relay-client-ts";
 import { create } from "@bufbuild/protobuf";
 
@@ -103,7 +103,8 @@ export class RelayClient {
       requiredEpoch,
     });
 
-    for await (const response of this.client.signMessageWait(request)) {
+    const stream = await this.client.signMessageWait(request);
+    for await (const response of stream) {
       yield response;
     }
   }
@@ -160,8 +161,8 @@ async function main() {
       const proofResponse = await client.getAggregationProof(signResponse.requestHash);
       console.log(`Verification type: ${proofResponse.aggregationProof?.verificationType}`);
       console.log(`Proof length: ${proofResponse.aggregationProof?.proof.length} bytes`);
-    } catch (error: any) {
-      console.log(`Could not get aggregation proof yet: ${error.message} (expected as we did not wait for all relays to sign)`);
+    } catch (error: unknown) {
+      console.log(`Could not get aggregation proof yet: ${(error as Error).message} (expected as we did not wait for all relays to sign)`);
     }
 
     // Example 6: Get individual signatures
@@ -170,14 +171,14 @@ async function main() {
       const signaturesResponse = await client.getSignatures(signResponse.requestHash);
       console.log(`Number of signatures: ${signaturesResponse.signatures.length}`);
       
-      signaturesResponse.signatures.forEach((signature, index) => {
+      signaturesResponse.signatures.forEach((signature: Signature, index: number) => {
         console.log(`Signature ${index + 1}:`);
         console.log(`  - Signature length: ${signature.signature.length} bytes`);
         console.log(`  - Public key length: ${signature.publicKey.length} bytes`);
         console.log(`  - Message hash length: ${signature.messageHash.length} bytes`);
       });
-    } catch (error: any) {
-      console.log(`Could not get signatures yet: ${error.message}`);
+    } catch (error: unknown) {
+      console.log(`Could not get signatures yet: ${(error as Error).message}`);
     }
 
     // Example 7: Sign and wait for completion (streaming)
@@ -219,11 +220,12 @@ async function main() {
       await new Promise(resolve => setTimeout(resolve, 100));
     }
 
-  } catch (error: any) {
-    if (error.code) {
-      console.error(`gRPC error: ${error.code} - ${error.message}`);
+  } catch (error: unknown) {
+    const err = error as { code?: string; message?: string };
+    if (err.code) {
+      console.error(`gRPC error: ${err.code} - ${err.message}`);
     } else {
-      console.error(`Error: ${error.message}`);
+      console.error(`Error: ${(error as Error).message}`);
     }
   }
 
