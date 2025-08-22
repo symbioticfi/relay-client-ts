@@ -16,7 +16,7 @@ This directory contains examples demonstrating how to use the Symbiotic Relay Ty
    - Install example dependencies
 
 
-2. Make sure you have a Symbiotic Relay server running (default: `http://localhost:8080`)
+2. Make sure you have a Symbiotic Relay server running (default: `localhost:8080`)
 
 ## Examples
 
@@ -36,7 +36,7 @@ npm run basic-usage
 ```
 
 **Environment variables:**
-- `RELAY_SERVER_URL`: Override the default server URL (default: `http://localhost:8080`)
+- `RELAY_SERVER_URL`: Override the default server URL (default: `localhost:8080`)
 
 
 NOTE: for the signature/proof generation to work you need to run the script for all active relay servers to get the majority consensus to generate proof.
@@ -60,7 +60,7 @@ import { createGrpcTransport } from "@connectrpc/connect-node";
 import { SymbioticAPIService } from "@symbioticfi/relay-client-ts";
 
 const transport = createGrpcTransport({
-  baseUrl: "http://localhost:8080",
+  baseUrl: "localhost:8080",
 });
 const client = createClient(SymbioticAPIService, transport);
 ```
