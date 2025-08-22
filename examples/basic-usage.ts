@@ -115,7 +115,7 @@ export class RelayClient {
  */
 async function main() {
   // Initialize client
-  const serverUrl = process.env.RELAY_SERVER_URL || "http://localhost:8080";
+  const serverUrl = process.env.RELAY_SERVER_URL || "localhost:8080";
   const client = new RelayClient(serverUrl);
 
   try {
