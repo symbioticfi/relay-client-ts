@@ -9,6 +9,7 @@
  * 3. Sign a message
  * 4. Retrieve aggregation proofs
  * 5. Get validator set information
+ * 6. Sign and wait for completion via streaming
  */
 
 import { createClient } from "@connectrpc/connect";
@@ -17,13 +18,14 @@ import { SymbioticAPIService } from "@symbioticfi/relay-client-ts";
 import {
   SigningStatus,
   GetCurrentEpochRequestSchema,
-  GetSuggestedEpochRequestSchema,
+  GetLastAllCommittedRequestSchema,
   SignMessageRequestSchema,
   GetAggregationProofRequestSchema,
   GetSignaturesRequestSchema,
   GetValidatorSetRequestSchema,
   SignMessageWaitRequestSchema,
   Signature,
+  ChainEpochInfo,
 } from "@symbioticfi/relay-client-ts";
 import { create } from "@bufbuild/protobuf";
 
@@ -50,11 +52,11 @@ export class RelayClient {
   }
 
   /**
-   * Get the suggested epoch for signing.
+   * Get the last all committed epochs for all chains.
    */
-  async getSuggestedEpoch() {
-    const request = create(GetSuggestedEpochRequestSchema);
-    return await this.client.getSuggestedEpoch(request);
+  async getLastAllCommitted() {
+    const request = create(GetLastAllCommittedRequestSchema);
+    return await this.client.getLastAllCommitted(request);
   }
 
   /**
@@ -126,9 +128,16 @@ async function main() {
     console.log(`Start time: ${epochResponse.startTime ? new Date(Number(epochResponse.startTime.seconds) * 1000) : 'N/A'}`);
 
     // Example 2: Get suggested epoch
-    console.log("\n=== Getting Suggested Epoch ===");
-    const suggestedEpoch = await client.getSuggestedEpoch();
-    console.log(`Suggested epoch: ${suggestedEpoch.epoch}`);
+    console.log("\n=== Calculate Last Committed Epoch ===");
+    let suggestedEpoch = 0;
+    const epochInfos = await client.getLastAllCommitted();
+    for (const [chainId, info] of Object.entries(epochInfos.epochInfos)) {
+      const chainInfo = info as ChainEpochInfo;
+      if (suggestedEpoch === 0 || Number(chainInfo.lastCommittedEpoch) < suggestedEpoch) {
+        suggestedEpoch = Number(chainInfo.lastCommittedEpoch);
+      }
+    }
+    console.log(`Last committed epoch: ${suggestedEpoch}`);
 
     // Example 3: Get validator set
     console.log("\n=== Getting Validator Set ===");
@@ -137,6 +146,7 @@ async function main() {
     console.log(`Epoch: ${validatorSet.epoch}`);
     console.log(`Status: ${validatorSet.status}`);
     console.log(`Number of validators: ${validatorSet.validators.length}`);
+    console.log(`Quorum threshold: ${validatorSet.quorumThreshold}`);
 
     // Display some validator details
     if (validatorSet.validators.length > 0) {
@@ -144,6 +154,7 @@ async function main() {
       console.log(`First validator operator: ${firstValidator.operator}`);
       console.log(`First validator voting power: ${firstValidator.votingPower}`);
       console.log(`First validator is active: ${firstValidator.isActive}`);
+      console.log(`First validator keys count: ${firstValidator.keys.length}`);
     }
 
     // Example 4: Sign a message
@@ -159,10 +170,14 @@ async function main() {
     console.log("\n=== Getting Aggregation Proof ===");
     try {
       const proofResponse = await client.getAggregationProof(signResponse.requestHash);
-      console.log(`Verification type: ${proofResponse.aggregationProof?.verificationType}`);
-      console.log(`Proof length: ${proofResponse.aggregationProof?.proof.length} bytes`);
+      if (proofResponse.aggregationProof) {
+        const proof = proofResponse.aggregationProof;
+        console.log(`Verification type: ${proof.verificationType}`);
+        console.log(`Proof length: ${proof.proof.length} bytes`);
+        console.log(`Message hash length: ${proof.messageHash.length} bytes`);
+      }
     } catch (error: unknown) {
-      console.log(`Could not get aggregation proof yet: ${(error as Error).message} (expected as we did not wait for all relays to sign)`);
+      console.log(`Could not get aggregation proof yet: ${(error as Error).message}`);
     }
 
     // Example 6: Get individual signatures
@@ -183,36 +198,44 @@ async function main() {
 
     // Example 7: Sign and wait for completion (streaming)
     console.log("\n=== Sign and Wait (Streaming) ===");
-    const messageToSignStream = new TextEncoder().encode("Sample Message to Sign");
+    const messageToSignStream = new TextEncoder().encode("Streaming example");
 
-    console.log("Starting streaming sign request...(ensure to run the script for all active relay servers)");
-    for await (const streamResponse of client.signMessageAndWait(keyTag, messageToSignStream)) {
-      console.log(`Status: ${SigningStatus[streamResponse.status]}`);
-      console.log(`Request hash: ${streamResponse.requestHash}`);
+    console.log("Starting streaming sign request... (ensure to run the script for all active relay servers)");
+    
+    streamLoop: for await (const response of client.signMessageAndWait(keyTag, messageToSignStream)) {
+      console.log(`Status: ${SigningStatus[response.status]}`);
+      console.log(`Request hash: ${response.requestHash}`);
+      console.log(`Epoch: ${response.epoch}`);
 
-      switch (streamResponse.status) {
+      switch (response.status) {
         case SigningStatus.PENDING:
           console.log("Request created, waiting for signatures...");
           break;
 
         case SigningStatus.COMPLETED:
           console.log("Signing completed!");
-          if (streamResponse.aggregationProof) {
-            console.log(`Proof length: ${streamResponse.aggregationProof.proof.length} bytes`);
-            console.log(`Verification type: ${streamResponse.aggregationProof.verificationType}`);
+          if (response.aggregationProof) {
+            const proof = response.aggregationProof;
+            console.log(`Proof length: ${proof.proof.length} bytes`);
+            console.log(`Verification type: ${proof.verificationType}`);
           }
-          return; // Exit the streaming loop
+          // Exit the streaming loop
+          break streamLoop;
 
         case SigningStatus.FAILED:
-          console.log("Failed to sign message");
-          return;
+          console.log("Signing failed");
+          break streamLoop;
 
         case SigningStatus.TIMEOUT:
           console.log("Signing timed out");
-          return;
+          break streamLoop;
+
+        case SigningStatus.UNSPECIFIED:
+          console.log("Unknown Signing status : unspecified");
+          break;
 
         default:
-          console.log(`Unknown status: ${streamResponse.status}`);
+          console.log(`Unknown status: ${response.status}`);
           break;
       }
 
