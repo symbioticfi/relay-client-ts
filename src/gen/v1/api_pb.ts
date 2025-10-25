@@ -12,7 +12,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file v1/api.proto.
  */
 export const file_v1_api: GenFile = /*@__PURE__*/
-  fileDesc("Cgx2MS9hcGkucHJvdG8SDGFwaS5wcm90by52MSJmChJTaWduTWVzc2FnZVJlcXVlc3QSDwoHa2V5X3RhZxgBIAEoDRIPCgdtZXNzYWdlGAIgASgMEhsKDnJlcXVpcmVkX2Vwb2NoGAMgASgESACIAQFCEQoPX3JlcXVpcmVkX2Vwb2NoIjgKE1NpZ25NZXNzYWdlUmVzcG9uc2USEgoKcmVxdWVzdF9pZBgBIAEoCRINCgVlcG9jaBgCIAEoBCJDChdMaXN0ZW5TaWduYXR1cmVzUmVxdWVzdBIYCgtzdGFydF9lcG9jaBgBIAEoBEgAiAEBQg4KDF9zdGFydF9lcG9jaCJpChhMaXN0ZW5TaWduYXR1cmVzUmVzcG9uc2USEgoKcmVxdWVzdF9pZBgBIAEoCRINCgVlcG9jaBgCIAEoBBIqCglzaWduYXR1cmUYAyABKAsyFy5hcGkucHJvdG8udjEuU2lnbmF0dXJlIj8KE0xpc3RlblByb29mc1JlcXVlc3QSGAoLc3RhcnRfZXBvY2gYASABKARIAIgBAUIOCgxfc3RhcnRfZXBvY2gidAoUTGlzdGVuUHJvb2ZzUmVzcG9uc2USEgoKcmVxdWVzdF9pZBgBIAEoCRINCgVlcG9jaBgCIAEoBBI5ChFhZ2dyZWdhdGlvbl9wcm9vZhgDIAEoCzIeLmFwaS5wcm90by52MS5BZ2dyZWdhdGlvblByb29mIkUKGUxpc3RlblZhbGlkYXRvclNldFJlcXVlc3QSGAoLc3RhcnRfZXBvY2gYASABKARIAIgBAUIOCgxfc3RhcnRfZXBvY2giTwoaTGlzdGVuVmFsaWRhdG9yU2V0UmVzcG9uc2USMQoNdmFsaWRhdG9yX3NldBgBIAEoCzIaLmFwaS5wcm90by52MS5WYWxpZGF0b3JTZXQiMAoaR2V0QWdncmVnYXRpb25Qcm9vZlJlcXVlc3QSEgoKcmVxdWVzdF9pZBgBIAEoCSIYChZHZXRDdXJyZW50RXBvY2hSZXF1ZXN0IioKFEdldFNpZ25hdHVyZXNSZXF1ZXN0EhIKCnJlcXVlc3RfaWQYASABKAkiRAoVR2V0U2lnbmF0dXJlc1Jlc3BvbnNlEisKCnNpZ25hdHVyZXMYASADKAsyFy5hcGkucHJvdG8udjEuU2lnbmF0dXJlIjAKGkdldFNpZ25hdHVyZVJlcXVlc3RSZXF1ZXN0EhIKCnJlcXVlc3RfaWQYASABKAkiMQobR2V0QWdncmVnYXRpb25TdGF0dXNSZXF1ZXN0EhIKCnJlcXVlc3RfaWQYASABKAkiNgoWR2V0VmFsaWRhdG9yU2V0UmVxdWVzdBISCgVlcG9jaBgBIAEoBEgAiAEBQggKBl9lcG9jaCJNChxHZXRWYWxpZGF0b3JCeUFkZHJlc3NSZXF1ZXN0EhIKBWVwb2NoGAEgASgESACIAQESDwoHYWRkcmVzcxgCIAEoCUIICgZfZXBvY2giPAocR2V0VmFsaWRhdG9yU2V0SGVhZGVyUmVxdWVzdBISCgVlcG9jaBgBIAEoBEgAiAEBQggKBl9lcG9jaCI+Ch5HZXRWYWxpZGF0b3JTZXRNZXRhZGF0YVJlcXVlc3QSEgoFZXBvY2gYASABKARIAIgBAUIICgZfZXBvY2giWAoXR2V0Q3VycmVudEVwb2NoUmVzcG9uc2USDQoFZXBvY2gYASABKAQSLgoKc3RhcnRfdGltZRgCIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXAiVwobR2V0U2lnbmF0dXJlUmVxdWVzdFJlc3BvbnNlEg8KB2tleV90YWcYASABKA0SDwoHbWVzc2FnZRgCIAEoDBIWCg5yZXF1aXJlZF9lcG9jaBgDIAEoBCJYChtHZXRBZ2dyZWdhdGlvblByb29mUmVzcG9uc2USOQoRYWdncmVnYXRpb25fcHJvb2YYASABKAsyHi5hcGkucHJvdG8udjEuQWdncmVnYXRpb25Qcm9vZiI3ChBBZ2dyZWdhdGlvblByb29mEhQKDG1lc3NhZ2VfaGFzaBgCIAEoDBINCgVwcm9vZhgDIAEoDCJWChxHZXRBZ2dyZWdhdGlvblN0YXR1c1Jlc3BvbnNlEhwKFGN1cnJlbnRfdm90aW5nX3Bvd2VyGAEgASgJEhgKEHNpZ25lcl9vcGVyYXRvcnMYAiADKAkiSAoJU2lnbmF0dXJlEhEKCXNpZ25hdHVyZRgBIAEoDBIUCgxtZXNzYWdlX2hhc2gYAiABKAwSEgoKcHVibGljX2tleRgDIAEoDCJMChdHZXRWYWxpZGF0b3JTZXRSZXNwb25zZRIxCg12YWxpZGF0b3Jfc2V0GAEgASgLMhouYXBpLnByb3RvLnYxLlZhbGlkYXRvclNldCJLCh1HZXRWYWxpZGF0b3JCeUFkZHJlc3NSZXNwb25zZRIqCgl2YWxpZGF0b3IYASABKAsyFy5hcGkucHJvdG8udjEuVmFsaWRhdG9yIicKCUV4dHJhRGF0YRILCgNrZXkYASABKAwSDQoFdmFsdWUYAiABKAwiewofR2V0VmFsaWRhdG9yU2V0TWV0YWRhdGFSZXNwb25zZRIrCgpleHRyYV9kYXRhGAEgAygLMhcuYXBpLnByb3RvLnYxLkV4dHJhRGF0YRIXCg9jb21taXRtZW50X2RhdGEYAiABKAwSEgoKcmVxdWVzdF9pZBgDIAEoCSLkAQodR2V0VmFsaWRhdG9yU2V0SGVhZGVyUmVzcG9uc2USDwoHdmVyc2lvbhgBIAEoDRIYChByZXF1aXJlZF9rZXlfdGFnGAIgASgNEg0KBWVwb2NoGAMgASgEEjUKEWNhcHR1cmVfdGltZXN0YW1wGAQgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcBIYChBxdW9ydW1fdGhyZXNob2xkGAUgASgJEhoKEnRvdGFsX3ZvdGluZ19wb3dlchgGIAEoCRIcChR2YWxpZGF0b3JzX3Nzel9tcm9vdBgHIAEoCSKVAQoJVmFsaWRhdG9yEhAKCG9wZXJhdG9yGAEgASgJEhQKDHZvdGluZ19wb3dlchgCIAEoCRIRCglpc19hY3RpdmUYAyABKAgSHwoEa2V5cxgEIAMoCzIRLmFwaS5wcm90by52MS5LZXkSLAoGdmF1bHRzGAUgAygLMhwuYXBpLnByb3RvLnYxLlZhbGlkYXRvclZhdWx0IiMKA0tleRILCgN0YWcYASABKA0SDwoHcGF5bG9hZBgCIAEoDCJHCg5WYWxpZGF0b3JWYXVsdBIQCghjaGFpbl9pZBgBIAEoBBINCgV2YXVsdBgCIAEoCRIUCgx2b3RpbmdfcG93ZXIYAyABKAkiNgoXR2V0TGFzdENvbW1pdHRlZFJlcXVlc3QSGwoTc2V0dGxlbWVudF9jaGFpbl9pZBgBIAEoBCJpChhHZXRMYXN0Q29tbWl0dGVkUmVzcG9uc2USGwoTc2V0dGxlbWVudF9jaGFpbl9pZBgBIAEoBBIwCgplcG9jaF9pbmZvGAIgASgLMhwuYXBpLnByb3RvLnYxLkNoYWluRXBvY2hJbmZvIhwKGkdldExhc3RBbGxDb21taXR0ZWRSZXF1ZXN0Ir4BChtHZXRMYXN0QWxsQ29tbWl0dGVkUmVzcG9uc2USTgoLZXBvY2hfaW5mb3MYASADKAsyOS5hcGkucHJvdG8udjEuR2V0TGFzdEFsbENvbW1pdHRlZFJlc3BvbnNlLkVwb2NoSW5mb3NFbnRyeRpPCg9FcG9jaEluZm9zRW50cnkSCwoDa2V5GAEgASgEEisKBXZhbHVlGAIgASgLMhwuYXBpLnByb3RvLnYxLkNoYWluRXBvY2hJbmZvOgI4ASJeCg5DaGFpbkVwb2NoSW5mbxIcChRsYXN0X2NvbW1pdHRlZF9lcG9jaBgBIAEoBBIuCgpzdGFydF90aW1lGAIgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcCL4AQoMVmFsaWRhdG9yU2V0Eg8KB3ZlcnNpb24YASABKA0SGAoQcmVxdWlyZWRfa2V5X3RhZxgCIAEoDRINCgVlcG9jaBgDIAEoBBI1ChFjYXB0dXJlX3RpbWVzdGFtcBgEIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXASGAoQcXVvcnVtX3RocmVzaG9sZBgFIAEoCRIwCgZzdGF0dXMYBiABKA4yIC5hcGkucHJvdG8udjEuVmFsaWRhdG9yU2V0U3RhdHVzEisKCnZhbGlkYXRvcnMYByADKAsyFy5hcGkucHJvdG8udjEuVmFsaWRhdG9yKsYBChJWYWxpZGF0b3JTZXRTdGF0dXMSJAogVkFMSURBVE9SX1NFVF9TVEFUVVNfVU5TUEVDSUZJRUQQABIgChxWQUxJREFUT1JfU0VUX1NUQVRVU19ERVJJVkVEEAESIwofVkFMSURBVE9SX1NFVF9TVEFUVVNfQUdHUkVHQVRFRBACEiIKHlZBTElEQVRPUl9TRVRfU1RBVFVTX0NPTU1JVFRFRBADEh8KG1ZBTElEQVRPUl9TRVRfU1RBVFVTX01JU1NFRBAEKqABCg1TaWduaW5nU3RhdHVzEh4KGlNJR05JTkdfU1RBVFVTX1VOU1BFQ0lGSUVEEAASGgoWU0lHTklOR19TVEFUVVNfUEVORElORxABEhwKGFNJR05JTkdfU1RBVFVTX0NPTVBMRVRFRBACEhkKFVNJR05JTkdfU1RBVFVTX0ZBSUxFRBADEhoKFlNJR05JTkdfU1RBVFVTX1RJTUVPVVQQBCp3CglFcnJvckNvZGUSGgoWRVJST1JfQ09ERV9VTlNQRUNJRklFRBAAEhYKEkVSUk9SX0NPREVfTk9fREFUQRABEhcKE0VSUk9SX0NPREVfSU5URVJOQUwQAhIdChlFUlJPUl9DT0RFX05PVF9BR0dSRUdBVE9SEAMyngwKE1N5bWJpb3RpY0FQSVNlcnZpY2USUgoLU2lnbk1lc3NhZ2USIC5hcGkucHJvdG8udjEuU2lnbk1lc3NhZ2VSZXF1ZXN0GiEuYXBpLnByb3RvLnYxLlNpZ25NZXNzYWdlUmVzcG9uc2USagoTR2V0QWdncmVnYXRpb25Qcm9vZhIoLmFwaS5wcm90by52MS5HZXRBZ2dyZWdhdGlvblByb29mUmVxdWVzdBopLmFwaS5wcm90by52MS5HZXRBZ2dyZWdhdGlvblByb29mUmVzcG9uc2USXgoPR2V0Q3VycmVudEVwb2NoEiQuYXBpLnByb3RvLnYxLkdldEN1cnJlbnRFcG9jaFJlcXVlc3QaJS5hcGkucHJvdG8udjEuR2V0Q3VycmVudEVwb2NoUmVzcG9uc2USWAoNR2V0U2lnbmF0dXJlcxIiLmFwaS5wcm90by52MS5HZXRTaWduYXR1cmVzUmVxdWVzdBojLmFwaS5wcm90by52MS5HZXRTaWduYXR1cmVzUmVzcG9uc2USagoTR2V0U2lnbmF0dXJlUmVxdWVzdBIoLmFwaS5wcm90by52MS5HZXRTaWduYXR1cmVSZXF1ZXN0UmVxdWVzdBopLmFwaS5wcm90by52MS5HZXRTaWduYXR1cmVSZXF1ZXN0UmVzcG9uc2USbQoUR2V0QWdncmVnYXRpb25TdGF0dXMSKS5hcGkucHJvdG8udjEuR2V0QWdncmVnYXRpb25TdGF0dXNSZXF1ZXN0GiouYXBpLnByb3RvLnYxLkdldEFnZ3JlZ2F0aW9uU3RhdHVzUmVzcG9uc2USXgoPR2V0VmFsaWRhdG9yU2V0EiQuYXBpLnByb3RvLnYxLkdldFZhbGlkYXRvclNldFJlcXVlc3QaJS5hcGkucHJvdG8udjEuR2V0VmFsaWRhdG9yU2V0UmVzcG9uc2UScAoVR2V0VmFsaWRhdG9yQnlBZGRyZXNzEiouYXBpLnByb3RvLnYxLkdldFZhbGlkYXRvckJ5QWRkcmVzc1JlcXVlc3QaKy5hcGkucHJvdG8udjEuR2V0VmFsaWRhdG9yQnlBZGRyZXNzUmVzcG9uc2UScAoVR2V0VmFsaWRhdG9yU2V0SGVhZGVyEiouYXBpLnByb3RvLnYxLkdldFZhbGlkYXRvclNldEhlYWRlclJlcXVlc3QaKy5hcGkucHJvdG8udjEuR2V0VmFsaWRhdG9yU2V0SGVhZGVyUmVzcG9uc2USYQoQR2V0TGFzdENvbW1pdHRlZBIlLmFwaS5wcm90by52MS5HZXRMYXN0Q29tbWl0dGVkUmVxdWVzdBomLmFwaS5wcm90by52MS5HZXRMYXN0Q29tbWl0dGVkUmVzcG9uc2USagoTR2V0TGFzdEFsbENvbW1pdHRlZBIoLmFwaS5wcm90by52MS5HZXRMYXN0QWxsQ29tbWl0dGVkUmVxdWVzdBopLmFwaS5wcm90by52MS5HZXRMYXN0QWxsQ29tbWl0dGVkUmVzcG9uc2USdgoXR2V0VmFsaWRhdG9yU2V0TWV0YWRhdGESLC5hcGkucHJvdG8udjEuR2V0VmFsaWRhdG9yU2V0TWV0YWRhdGFSZXF1ZXN0Gi0uYXBpLnByb3RvLnYxLkdldFZhbGlkYXRvclNldE1ldGFkYXRhUmVzcG9uc2USYwoQTGlzdGVuU2lnbmF0dXJlcxIlLmFwaS5wcm90by52MS5MaXN0ZW5TaWduYXR1cmVzUmVxdWVzdBomLmFwaS5wcm90by52MS5MaXN0ZW5TaWduYXR1cmVzUmVzcG9uc2UwARJXCgxMaXN0ZW5Qcm9vZnMSIS5hcGkucHJvdG8udjEuTGlzdGVuUHJvb2ZzUmVxdWVzdBoiLmFwaS5wcm90by52MS5MaXN0ZW5Qcm9vZnNSZXNwb25zZTABEmkKEkxpc3RlblZhbGlkYXRvclNldBInLmFwaS5wcm90by52MS5MaXN0ZW5WYWxpZGF0b3JTZXRSZXF1ZXN0GiguYXBpLnByb3RvLnYxLkxpc3RlblZhbGlkYXRvclNldFJlc3BvbnNlMAFCmQEKEGNvbS5hcGkucHJvdG8udjFCCEFwaVByb3RvUAFaKWdpdGh1Yi5jb20vc3ltYmlvdGljZmkvcmVsYXkvYXBpL3Byb3RvL3YxogIDQVBYqgIMQXBpLlByb3RvLlYxygIMQXBpXFByb3RvXFYx4gIYQXBpXFByb3RvXFYxXEdQQk1ldGFkYXRh6gIOQXBpOjpQcm90bzo6VjFiBnByb3RvMw", [file_google_protobuf_timestamp]);
+  fileDesc("Cgx2MS9hcGkucHJvdG8SDGFwaS5wcm90by52MSJmChJTaWduTWVzc2FnZVJlcXVlc3QSDwoHa2V5X3RhZxgBIAEoDRIPCgdtZXNzYWdlGAIgASgMEhsKDnJlcXVpcmVkX2Vwb2NoGAMgASgESACIAQFCEQoPX3JlcXVpcmVkX2Vwb2NoIjgKE1NpZ25NZXNzYWdlUmVzcG9uc2USEgoKcmVxdWVzdF9pZBgBIAEoCRINCgVlcG9jaBgCIAEoBCJDChdMaXN0ZW5TaWduYXR1cmVzUmVxdWVzdBIYCgtzdGFydF9lcG9jaBgBIAEoBEgAiAEBQg4KDF9zdGFydF9lcG9jaCJpChhMaXN0ZW5TaWduYXR1cmVzUmVzcG9uc2USEgoKcmVxdWVzdF9pZBgBIAEoCRINCgVlcG9jaBgCIAEoBBIqCglzaWduYXR1cmUYAyABKAsyFy5hcGkucHJvdG8udjEuU2lnbmF0dXJlIj8KE0xpc3RlblByb29mc1JlcXVlc3QSGAoLc3RhcnRfZXBvY2gYASABKARIAIgBAUIOCgxfc3RhcnRfZXBvY2gidAoUTGlzdGVuUHJvb2ZzUmVzcG9uc2USEgoKcmVxdWVzdF9pZBgBIAEoCRINCgVlcG9jaBgCIAEoBBI5ChFhZ2dyZWdhdGlvbl9wcm9vZhgDIAEoCzIeLmFwaS5wcm90by52MS5BZ2dyZWdhdGlvblByb29mIkUKGUxpc3RlblZhbGlkYXRvclNldFJlcXVlc3QSGAoLc3RhcnRfZXBvY2gYASABKARIAIgBAUIOCgxfc3RhcnRfZXBvY2giTwoaTGlzdGVuVmFsaWRhdG9yU2V0UmVzcG9uc2USMQoNdmFsaWRhdG9yX3NldBgBIAEoCzIaLmFwaS5wcm90by52MS5WYWxpZGF0b3JTZXQiMAoaR2V0QWdncmVnYXRpb25Qcm9vZlJlcXVlc3QSEgoKcmVxdWVzdF9pZBgBIAEoCSIzCiJHZXRBZ2dyZWdhdGlvblByb29mc0J5RXBvY2hSZXF1ZXN0Eg0KBWVwb2NoGAEgASgEIhgKFkdldEN1cnJlbnRFcG9jaFJlcXVlc3QiKgoUR2V0U2lnbmF0dXJlc1JlcXVlc3QSEgoKcmVxdWVzdF9pZBgBIAEoCSIsChtHZXRTaWduYXR1cmVzQnlFcG9jaFJlcXVlc3QSDQoFZXBvY2gYASABKAQiRAoVR2V0U2lnbmF0dXJlc1Jlc3BvbnNlEisKCnNpZ25hdHVyZXMYASADKAsyFy5hcGkucHJvdG8udjEuU2lnbmF0dXJlIksKHEdldFNpZ25hdHVyZXNCeUVwb2NoUmVzcG9uc2USKwoKc2lnbmF0dXJlcxgBIAMoCzIXLmFwaS5wcm90by52MS5TaWduYXR1cmUiMAoaR2V0U2lnbmF0dXJlUmVxdWVzdFJlcXVlc3QSEgoKcmVxdWVzdF9pZBgBIAEoCSIxChtHZXRBZ2dyZWdhdGlvblN0YXR1c1JlcXVlc3QSEgoKcmVxdWVzdF9pZBgBIAEoCSI2ChZHZXRWYWxpZGF0b3JTZXRSZXF1ZXN0EhIKBWVwb2NoGAEgASgESACIAQFCCAoGX2Vwb2NoIk0KHEdldFZhbGlkYXRvckJ5QWRkcmVzc1JlcXVlc3QSEgoFZXBvY2gYASABKARIAIgBARIPCgdhZGRyZXNzGAIgASgJQggKBl9lcG9jaCJfChhHZXRWYWxpZGF0b3JCeUtleVJlcXVlc3QSEgoFZXBvY2gYASABKARIAIgBARIPCgdrZXlfdGFnGAIgASgNEhQKDG9uX2NoYWluX2tleRgDIAEoDEIICgZfZXBvY2giOAoYR2V0TG9jYWxWYWxpZGF0b3JSZXF1ZXN0EhIKBWVwb2NoGAEgASgESACIAQFCCAoGX2Vwb2NoIjwKHEdldFZhbGlkYXRvclNldEhlYWRlclJlcXVlc3QSEgoFZXBvY2gYASABKARIAIgBAUIICgZfZXBvY2giPgoeR2V0VmFsaWRhdG9yU2V0TWV0YWRhdGFSZXF1ZXN0EhIKBWVwb2NoGAEgASgESACIAQFCCAoGX2Vwb2NoIlgKF0dldEN1cnJlbnRFcG9jaFJlc3BvbnNlEg0KBWVwb2NoGAEgASgEEi4KCnN0YXJ0X3RpbWUYAiABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wIlcKG0dldFNpZ25hdHVyZVJlcXVlc3RSZXNwb25zZRIPCgdrZXlfdGFnGAEgASgNEg8KB21lc3NhZ2UYAiABKAwSFgoOcmVxdWlyZWRfZXBvY2gYAyABKAQiWAobR2V0QWdncmVnYXRpb25Qcm9vZlJlc3BvbnNlEjkKEWFnZ3JlZ2F0aW9uX3Byb29mGAEgASgLMh4uYXBpLnByb3RvLnYxLkFnZ3JlZ2F0aW9uUHJvb2YiYQojR2V0QWdncmVnYXRpb25Qcm9vZnNCeUVwb2NoUmVzcG9uc2USOgoSYWdncmVnYXRpb25fcHJvb2ZzGAEgAygLMh4uYXBpLnByb3RvLnYxLkFnZ3JlZ2F0aW9uUHJvb2YiNwoQQWdncmVnYXRpb25Qcm9vZhIUCgxtZXNzYWdlX2hhc2gYAiABKAwSDQoFcHJvb2YYAyABKAwiVgocR2V0QWdncmVnYXRpb25TdGF0dXNSZXNwb25zZRIcChRjdXJyZW50X3ZvdGluZ19wb3dlchgBIAEoCRIYChBzaWduZXJfb3BlcmF0b3JzGAIgAygJIkgKCVNpZ25hdHVyZRIRCglzaWduYXR1cmUYASABKAwSFAoMbWVzc2FnZV9oYXNoGAIgASgMEhIKCnB1YmxpY19rZXkYAyABKAwiTAoXR2V0VmFsaWRhdG9yU2V0UmVzcG9uc2USMQoNdmFsaWRhdG9yX3NldBgBIAEoCzIaLmFwaS5wcm90by52MS5WYWxpZGF0b3JTZXQiSwodR2V0VmFsaWRhdG9yQnlBZGRyZXNzUmVzcG9uc2USKgoJdmFsaWRhdG9yGAEgASgLMhcuYXBpLnByb3RvLnYxLlZhbGlkYXRvciJHChlHZXRWYWxpZGF0b3JCeUtleVJlc3BvbnNlEioKCXZhbGlkYXRvchgBIAEoCzIXLmFwaS5wcm90by52MS5WYWxpZGF0b3IiRwoZR2V0TG9jYWxWYWxpZGF0b3JSZXNwb25zZRIqCgl2YWxpZGF0b3IYASABKAsyFy5hcGkucHJvdG8udjEuVmFsaWRhdG9yIicKCUV4dHJhRGF0YRILCgNrZXkYASABKAwSDQoFdmFsdWUYAiABKAwiewofR2V0VmFsaWRhdG9yU2V0TWV0YWRhdGFSZXNwb25zZRIrCgpleHRyYV9kYXRhGAEgAygLMhcuYXBpLnByb3RvLnYxLkV4dHJhRGF0YRIXCg9jb21taXRtZW50X2RhdGEYAiABKAwSEgoKcmVxdWVzdF9pZBgDIAEoCSLkAQodR2V0VmFsaWRhdG9yU2V0SGVhZGVyUmVzcG9uc2USDwoHdmVyc2lvbhgBIAEoDRIYChByZXF1aXJlZF9rZXlfdGFnGAIgASgNEg0KBWVwb2NoGAMgASgEEjUKEWNhcHR1cmVfdGltZXN0YW1wGAQgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcBIYChBxdW9ydW1fdGhyZXNob2xkGAUgASgJEhoKEnRvdGFsX3ZvdGluZ19wb3dlchgGIAEoCRIcChR2YWxpZGF0b3JzX3Nzel9tcm9vdBgHIAEoCSKVAQoJVmFsaWRhdG9yEhAKCG9wZXJhdG9yGAEgASgJEhQKDHZvdGluZ19wb3dlchgCIAEoCRIRCglpc19hY3RpdmUYAyABKAgSHwoEa2V5cxgEIAMoCzIRLmFwaS5wcm90by52MS5LZXkSLAoGdmF1bHRzGAUgAygLMhwuYXBpLnByb3RvLnYxLlZhbGlkYXRvclZhdWx0IiMKA0tleRILCgN0YWcYASABKA0SDwoHcGF5bG9hZBgCIAEoDCJHCg5WYWxpZGF0b3JWYXVsdBIQCghjaGFpbl9pZBgBIAEoBBINCgV2YXVsdBgCIAEoCRIUCgx2b3RpbmdfcG93ZXIYAyABKAkiNgoXR2V0TGFzdENvbW1pdHRlZFJlcXVlc3QSGwoTc2V0dGxlbWVudF9jaGFpbl9pZBgBIAEoBCJpChhHZXRMYXN0Q29tbWl0dGVkUmVzcG9uc2USGwoTc2V0dGxlbWVudF9jaGFpbl9pZBgBIAEoBBIwCgplcG9jaF9pbmZvGAIgASgLMhwuYXBpLnByb3RvLnYxLkNoYWluRXBvY2hJbmZvIhwKGkdldExhc3RBbGxDb21taXR0ZWRSZXF1ZXN0Ir4BChtHZXRMYXN0QWxsQ29tbWl0dGVkUmVzcG9uc2USTgoLZXBvY2hfaW5mb3MYASADKAsyOS5hcGkucHJvdG8udjEuR2V0TGFzdEFsbENvbW1pdHRlZFJlc3BvbnNlLkVwb2NoSW5mb3NFbnRyeRpPCg9FcG9jaEluZm9zRW50cnkSCwoDa2V5GAEgASgEEisKBXZhbHVlGAIgASgLMhwuYXBpLnByb3RvLnYxLkNoYWluRXBvY2hJbmZvOgI4ASJeCg5DaGFpbkVwb2NoSW5mbxIcChRsYXN0X2NvbW1pdHRlZF9lcG9jaBgBIAEoBBIuCgpzdGFydF90aW1lGAIgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcCL4AQoMVmFsaWRhdG9yU2V0Eg8KB3ZlcnNpb24YASABKA0SGAoQcmVxdWlyZWRfa2V5X3RhZxgCIAEoDRINCgVlcG9jaBgDIAEoBBI1ChFjYXB0dXJlX3RpbWVzdGFtcBgEIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXASGAoQcXVvcnVtX3RocmVzaG9sZBgFIAEoCRIwCgZzdGF0dXMYBiABKA4yIC5hcGkucHJvdG8udjEuVmFsaWRhdG9yU2V0U3RhdHVzEisKCnZhbGlkYXRvcnMYByADKAsyFy5hcGkucHJvdG8udjEuVmFsaWRhdG9yKsYBChJWYWxpZGF0b3JTZXRTdGF0dXMSJAogVkFMSURBVE9SX1NFVF9TVEFUVVNfVU5TUEVDSUZJRUQQABIgChxWQUxJREFUT1JfU0VUX1NUQVRVU19ERVJJVkVEEAESIwofVkFMSURBVE9SX1NFVF9TVEFUVVNfQUdHUkVHQVRFRBACEiIKHlZBTElEQVRPUl9TRVRfU1RBVFVTX0NPTU1JVFRFRBADEh8KG1ZBTElEQVRPUl9TRVRfU1RBVFVTX01JU1NFRBAEKqABCg1TaWduaW5nU3RhdHVzEh4KGlNJR05JTkdfU1RBVFVTX1VOU1BFQ0lGSUVEEAASGgoWU0lHTklOR19TVEFUVVNfUEVORElORxABEhwKGFNJR05JTkdfU1RBVFVTX0NPTVBMRVRFRBACEhkKFVNJR05JTkdfU1RBVFVTX0ZBSUxFRBADEhoKFlNJR05JTkdfU1RBVFVTX1RJTUVPVVQQBCp3CglFcnJvckNvZGUSGgoWRVJST1JfQ09ERV9VTlNQRUNJRklFRBAAEhYKEkVSUk9SX0NPREVfTk9fREFUQRABEhcKE0VSUk9SX0NPREVfSU5URVJOQUwQAhIdChlFUlJPUl9DT0RFX05PVF9BR0dSRUdBVE9SEAMy3g8KE1N5bWJpb3RpY0FQSVNlcnZpY2USUgoLU2lnbk1lc3NhZ2USIC5hcGkucHJvdG8udjEuU2lnbk1lc3NhZ2VSZXF1ZXN0GiEuYXBpLnByb3RvLnYxLlNpZ25NZXNzYWdlUmVzcG9uc2USagoTR2V0QWdncmVnYXRpb25Qcm9vZhIoLmFwaS5wcm90by52MS5HZXRBZ2dyZWdhdGlvblByb29mUmVxdWVzdBopLmFwaS5wcm90by52MS5HZXRBZ2dyZWdhdGlvblByb29mUmVzcG9uc2USggEKG0dldEFnZ3JlZ2F0aW9uUHJvb2ZzQnlFcG9jaBIwLmFwaS5wcm90by52MS5HZXRBZ2dyZWdhdGlvblByb29mc0J5RXBvY2hSZXF1ZXN0GjEuYXBpLnByb3RvLnYxLkdldEFnZ3JlZ2F0aW9uUHJvb2ZzQnlFcG9jaFJlc3BvbnNlEl4KD0dldEN1cnJlbnRFcG9jaBIkLmFwaS5wcm90by52MS5HZXRDdXJyZW50RXBvY2hSZXF1ZXN0GiUuYXBpLnByb3RvLnYxLkdldEN1cnJlbnRFcG9jaFJlc3BvbnNlElgKDUdldFNpZ25hdHVyZXMSIi5hcGkucHJvdG8udjEuR2V0U2lnbmF0dXJlc1JlcXVlc3QaIy5hcGkucHJvdG8udjEuR2V0U2lnbmF0dXJlc1Jlc3BvbnNlEm0KFEdldFNpZ25hdHVyZXNCeUVwb2NoEikuYXBpLnByb3RvLnYxLkdldFNpZ25hdHVyZXNCeUVwb2NoUmVxdWVzdBoqLmFwaS5wcm90by52MS5HZXRTaWduYXR1cmVzQnlFcG9jaFJlc3BvbnNlEmoKE0dldFNpZ25hdHVyZVJlcXVlc3QSKC5hcGkucHJvdG8udjEuR2V0U2lnbmF0dXJlUmVxdWVzdFJlcXVlc3QaKS5hcGkucHJvdG8udjEuR2V0U2lnbmF0dXJlUmVxdWVzdFJlc3BvbnNlEm0KFEdldEFnZ3JlZ2F0aW9uU3RhdHVzEikuYXBpLnByb3RvLnYxLkdldEFnZ3JlZ2F0aW9uU3RhdHVzUmVxdWVzdBoqLmFwaS5wcm90by52MS5HZXRBZ2dyZWdhdGlvblN0YXR1c1Jlc3BvbnNlEl4KD0dldFZhbGlkYXRvclNldBIkLmFwaS5wcm90by52MS5HZXRWYWxpZGF0b3JTZXRSZXF1ZXN0GiUuYXBpLnByb3RvLnYxLkdldFZhbGlkYXRvclNldFJlc3BvbnNlEnAKFUdldFZhbGlkYXRvckJ5QWRkcmVzcxIqLmFwaS5wcm90by52MS5HZXRWYWxpZGF0b3JCeUFkZHJlc3NSZXF1ZXN0GisuYXBpLnByb3RvLnYxLkdldFZhbGlkYXRvckJ5QWRkcmVzc1Jlc3BvbnNlEmQKEUdldFZhbGlkYXRvckJ5S2V5EiYuYXBpLnByb3RvLnYxLkdldFZhbGlkYXRvckJ5S2V5UmVxdWVzdBonLmFwaS5wcm90by52MS5HZXRWYWxpZGF0b3JCeUtleVJlc3BvbnNlEmQKEUdldExvY2FsVmFsaWRhdG9yEiYuYXBpLnByb3RvLnYxLkdldExvY2FsVmFsaWRhdG9yUmVxdWVzdBonLmFwaS5wcm90by52MS5HZXRMb2NhbFZhbGlkYXRvclJlc3BvbnNlEnAKFUdldFZhbGlkYXRvclNldEhlYWRlchIqLmFwaS5wcm90by52MS5HZXRWYWxpZGF0b3JTZXRIZWFkZXJSZXF1ZXN0GisuYXBpLnByb3RvLnYxLkdldFZhbGlkYXRvclNldEhlYWRlclJlc3BvbnNlEmEKEEdldExhc3RDb21taXR0ZWQSJS5hcGkucHJvdG8udjEuR2V0TGFzdENvbW1pdHRlZFJlcXVlc3QaJi5hcGkucHJvdG8udjEuR2V0TGFzdENvbW1pdHRlZFJlc3BvbnNlEmoKE0dldExhc3RBbGxDb21taXR0ZWQSKC5hcGkucHJvdG8udjEuR2V0TGFzdEFsbENvbW1pdHRlZFJlcXVlc3QaKS5hcGkucHJvdG8udjEuR2V0TGFzdEFsbENvbW1pdHRlZFJlc3BvbnNlEnYKF0dldFZhbGlkYXRvclNldE1ldGFkYXRhEiwuYXBpLnByb3RvLnYxLkdldFZhbGlkYXRvclNldE1ldGFkYXRhUmVxdWVzdBotLmFwaS5wcm90by52MS5HZXRWYWxpZGF0b3JTZXRNZXRhZGF0YVJlc3BvbnNlEmMKEExpc3RlblNpZ25hdHVyZXMSJS5hcGkucHJvdG8udjEuTGlzdGVuU2lnbmF0dXJlc1JlcXVlc3QaJi5hcGkucHJvdG8udjEuTGlzdGVuU2lnbmF0dXJlc1Jlc3BvbnNlMAESVwoMTGlzdGVuUHJvb2ZzEiEuYXBpLnByb3RvLnYxLkxpc3RlblByb29mc1JlcXVlc3QaIi5hcGkucHJvdG8udjEuTGlzdGVuUHJvb2ZzUmVzcG9uc2UwARJpChJMaXN0ZW5WYWxpZGF0b3JTZXQSJy5hcGkucHJvdG8udjEuTGlzdGVuVmFsaWRhdG9yU2V0UmVxdWVzdBooLmFwaS5wcm90by52MS5MaXN0ZW5WYWxpZGF0b3JTZXRSZXNwb25zZTABQpkBChBjb20uYXBpLnByb3RvLnYxQghBcGlQcm90b1ABWilnaXRodWIuY29tL3N5bWJpb3RpY2ZpL3JlbGF5L2FwaS9wcm90by92MaICA0FQWKoCDEFwaS5Qcm90by5WMcoCDEFwaVxQcm90b1xWMeICGEFwaVxQcm90b1xWMVxHUEJNZXRhZGF0YeoCDkFwaTo6UHJvdG86OlYxYgZwcm90bzM", [file_google_protobuf_timestamp]);
 
 /**
  * Request message for signing a message
@@ -254,6 +254,27 @@ export const GetAggregationProofRequestSchema: GenMessage<GetAggregationProofReq
   messageDesc(file_v1_api, 8);
 
 /**
+ * Request message for getting aggregation proof
+ *
+ * @generated from message api.proto.v1.GetAggregationProofsByEpochRequest
+ */
+export type GetAggregationProofsByEpochRequest = Message<"api.proto.v1.GetAggregationProofsByEpochRequest"> & {
+  /**
+   * Epoch number
+   *
+   * @generated from field: uint64 epoch = 1;
+   */
+  epoch: bigint;
+};
+
+/**
+ * Describes the message api.proto.v1.GetAggregationProofsByEpochRequest.
+ * Use `create(GetAggregationProofsByEpochRequestSchema)` to create a new message.
+ */
+export const GetAggregationProofsByEpochRequestSchema: GenMessage<GetAggregationProofsByEpochRequest> = /*@__PURE__*/
+  messageDesc(file_v1_api, 9);
+
+/**
  * Request message for getting current epoch
  *
  * @generated from message api.proto.v1.GetCurrentEpochRequest
@@ -266,7 +287,7 @@ export type GetCurrentEpochRequest = Message<"api.proto.v1.GetCurrentEpochReques
  * Use `create(GetCurrentEpochRequestSchema)` to create a new message.
  */
 export const GetCurrentEpochRequestSchema: GenMessage<GetCurrentEpochRequest> = /*@__PURE__*/
-  messageDesc(file_v1_api, 9);
+  messageDesc(file_v1_api, 10);
 
 /**
  * Request message for getting signatures
@@ -285,7 +306,28 @@ export type GetSignaturesRequest = Message<"api.proto.v1.GetSignaturesRequest"> 
  * Use `create(GetSignaturesRequestSchema)` to create a new message.
  */
 export const GetSignaturesRequestSchema: GenMessage<GetSignaturesRequest> = /*@__PURE__*/
-  messageDesc(file_v1_api, 10);
+  messageDesc(file_v1_api, 11);
+
+/**
+ * Request message for getting signatures by epoch
+ *
+ * @generated from message api.proto.v1.GetSignaturesByEpochRequest
+ */
+export type GetSignaturesByEpochRequest = Message<"api.proto.v1.GetSignaturesByEpochRequest"> & {
+  /**
+   * Epoch number
+   *
+   * @generated from field: uint64 epoch = 1;
+   */
+  epoch: bigint;
+};
+
+/**
+ * Describes the message api.proto.v1.GetSignaturesByEpochRequest.
+ * Use `create(GetSignaturesByEpochRequestSchema)` to create a new message.
+ */
+export const GetSignaturesByEpochRequestSchema: GenMessage<GetSignaturesByEpochRequest> = /*@__PURE__*/
+  messageDesc(file_v1_api, 12);
 
 /**
  * Response message for getting signatures
@@ -306,7 +348,28 @@ export type GetSignaturesResponse = Message<"api.proto.v1.GetSignaturesResponse"
  * Use `create(GetSignaturesResponseSchema)` to create a new message.
  */
 export const GetSignaturesResponseSchema: GenMessage<GetSignaturesResponse> = /*@__PURE__*/
-  messageDesc(file_v1_api, 11);
+  messageDesc(file_v1_api, 13);
+
+/**
+ * Response message for getting signatures by epoch
+ *
+ * @generated from message api.proto.v1.GetSignaturesByEpochResponse
+ */
+export type GetSignaturesByEpochResponse = Message<"api.proto.v1.GetSignaturesByEpochResponse"> & {
+  /**
+   * List of signatures
+   *
+   * @generated from field: repeated api.proto.v1.Signature signatures = 1;
+   */
+  signatures: Signature[];
+};
+
+/**
+ * Describes the message api.proto.v1.GetSignaturesByEpochResponse.
+ * Use `create(GetSignaturesByEpochResponseSchema)` to create a new message.
+ */
+export const GetSignaturesByEpochResponseSchema: GenMessage<GetSignaturesByEpochResponse> = /*@__PURE__*/
+  messageDesc(file_v1_api, 14);
 
 /**
  * Request message for getting signature request
@@ -325,7 +388,7 @@ export type GetSignatureRequestRequest = Message<"api.proto.v1.GetSignatureReque
  * Use `create(GetSignatureRequestRequestSchema)` to create a new message.
  */
 export const GetSignatureRequestRequestSchema: GenMessage<GetSignatureRequestRequest> = /*@__PURE__*/
-  messageDesc(file_v1_api, 12);
+  messageDesc(file_v1_api, 15);
 
 /**
  * Request message for getting aggregation status
@@ -344,7 +407,7 @@ export type GetAggregationStatusRequest = Message<"api.proto.v1.GetAggregationSt
  * Use `create(GetAggregationStatusRequestSchema)` to create a new message.
  */
 export const GetAggregationStatusRequestSchema: GenMessage<GetAggregationStatusRequest> = /*@__PURE__*/
-  messageDesc(file_v1_api, 13);
+  messageDesc(file_v1_api, 16);
 
 /**
  * Request message for getting validator set
@@ -365,7 +428,7 @@ export type GetValidatorSetRequest = Message<"api.proto.v1.GetValidatorSetReques
  * Use `create(GetValidatorSetRequestSchema)` to create a new message.
  */
 export const GetValidatorSetRequestSchema: GenMessage<GetValidatorSetRequest> = /*@__PURE__*/
-  messageDesc(file_v1_api, 14);
+  messageDesc(file_v1_api, 17);
 
 /**
  * Request message for getting validator by address
@@ -393,7 +456,63 @@ export type GetValidatorByAddressRequest = Message<"api.proto.v1.GetValidatorByA
  * Use `create(GetValidatorByAddressRequestSchema)` to create a new message.
  */
 export const GetValidatorByAddressRequestSchema: GenMessage<GetValidatorByAddressRequest> = /*@__PURE__*/
-  messageDesc(file_v1_api, 15);
+  messageDesc(file_v1_api, 18);
+
+/**
+ * Request message for getting validator by key
+ *
+ * @generated from message api.proto.v1.GetValidatorByKeyRequest
+ */
+export type GetValidatorByKeyRequest = Message<"api.proto.v1.GetValidatorByKeyRequest"> & {
+  /**
+   * Epoch number (optional, if not provided current epoch will be used)
+   *
+   * @generated from field: optional uint64 epoch = 1;
+   */
+  epoch?: bigint;
+
+  /**
+   * Validator key tag (required)
+   *
+   * @generated from field: uint32 key_tag = 2;
+   */
+  keyTag: number;
+
+  /**
+   * Validator on chain (public) key (required)
+   *
+   * @generated from field: bytes on_chain_key = 3;
+   */
+  onChainKey: Uint8Array;
+};
+
+/**
+ * Describes the message api.proto.v1.GetValidatorByKeyRequest.
+ * Use `create(GetValidatorByKeyRequestSchema)` to create a new message.
+ */
+export const GetValidatorByKeyRequestSchema: GenMessage<GetValidatorByKeyRequest> = /*@__PURE__*/
+  messageDesc(file_v1_api, 19);
+
+/**
+ * Request message for getting local validator
+ *
+ * @generated from message api.proto.v1.GetLocalValidatorRequest
+ */
+export type GetLocalValidatorRequest = Message<"api.proto.v1.GetLocalValidatorRequest"> & {
+  /**
+   * Epoch number (optional, if not provided current epoch will be used)
+   *
+   * @generated from field: optional uint64 epoch = 1;
+   */
+  epoch?: bigint;
+};
+
+/**
+ * Describes the message api.proto.v1.GetLocalValidatorRequest.
+ * Use `create(GetLocalValidatorRequestSchema)` to create a new message.
+ */
+export const GetLocalValidatorRequestSchema: GenMessage<GetLocalValidatorRequest> = /*@__PURE__*/
+  messageDesc(file_v1_api, 20);
 
 /**
  * Request message for getting validator set header
@@ -414,7 +533,7 @@ export type GetValidatorSetHeaderRequest = Message<"api.proto.v1.GetValidatorSet
  * Use `create(GetValidatorSetHeaderRequestSchema)` to create a new message.
  */
 export const GetValidatorSetHeaderRequestSchema: GenMessage<GetValidatorSetHeaderRequest> = /*@__PURE__*/
-  messageDesc(file_v1_api, 16);
+  messageDesc(file_v1_api, 21);
 
 /**
  * Request message for getting validator set metadata
@@ -435,7 +554,7 @@ export type GetValidatorSetMetadataRequest = Message<"api.proto.v1.GetValidatorS
  * Use `create(GetValidatorSetMetadataRequestSchema)` to create a new message.
  */
 export const GetValidatorSetMetadataRequestSchema: GenMessage<GetValidatorSetMetadataRequest> = /*@__PURE__*/
-  messageDesc(file_v1_api, 17);
+  messageDesc(file_v1_api, 22);
 
 /**
  * Response message for getting current epoch
@@ -463,7 +582,7 @@ export type GetCurrentEpochResponse = Message<"api.proto.v1.GetCurrentEpochRespo
  * Use `create(GetCurrentEpochResponseSchema)` to create a new message.
  */
 export const GetCurrentEpochResponseSchema: GenMessage<GetCurrentEpochResponse> = /*@__PURE__*/
-  messageDesc(file_v1_api, 18);
+  messageDesc(file_v1_api, 23);
 
 /**
  * Response message for getting signature request
@@ -498,7 +617,7 @@ export type GetSignatureRequestResponse = Message<"api.proto.v1.GetSignatureRequ
  * Use `create(GetSignatureRequestResponseSchema)` to create a new message.
  */
 export const GetSignatureRequestResponseSchema: GenMessage<GetSignatureRequestResponse> = /*@__PURE__*/
-  messageDesc(file_v1_api, 19);
+  messageDesc(file_v1_api, 24);
 
 /**
  * Response message for getting aggregation proof
@@ -517,7 +636,26 @@ export type GetAggregationProofResponse = Message<"api.proto.v1.GetAggregationPr
  * Use `create(GetAggregationProofResponseSchema)` to create a new message.
  */
 export const GetAggregationProofResponseSchema: GenMessage<GetAggregationProofResponse> = /*@__PURE__*/
-  messageDesc(file_v1_api, 20);
+  messageDesc(file_v1_api, 25);
+
+/**
+ * Response message for getting aggregation proof
+ *
+ * @generated from message api.proto.v1.GetAggregationProofsByEpochResponse
+ */
+export type GetAggregationProofsByEpochResponse = Message<"api.proto.v1.GetAggregationProofsByEpochResponse"> & {
+  /**
+   * @generated from field: repeated api.proto.v1.AggregationProof aggregation_proofs = 1;
+   */
+  aggregationProofs: AggregationProof[];
+};
+
+/**
+ * Describes the message api.proto.v1.GetAggregationProofsByEpochResponse.
+ * Use `create(GetAggregationProofsByEpochResponseSchema)` to create a new message.
+ */
+export const GetAggregationProofsByEpochResponseSchema: GenMessage<GetAggregationProofsByEpochResponse> = /*@__PURE__*/
+  messageDesc(file_v1_api, 26);
 
 /**
  * Response message for getting aggregation proof
@@ -545,7 +683,7 @@ export type AggregationProof = Message<"api.proto.v1.AggregationProof"> & {
  * Use `create(AggregationProofSchema)` to create a new message.
  */
 export const AggregationProofSchema: GenMessage<AggregationProof> = /*@__PURE__*/
-  messageDesc(file_v1_api, 21);
+  messageDesc(file_v1_api, 27);
 
 /**
  * Response message for getting aggregation status
@@ -573,7 +711,7 @@ export type GetAggregationStatusResponse = Message<"api.proto.v1.GetAggregationS
  * Use `create(GetAggregationStatusResponseSchema)` to create a new message.
  */
 export const GetAggregationStatusResponseSchema: GenMessage<GetAggregationStatusResponse> = /*@__PURE__*/
-  messageDesc(file_v1_api, 22);
+  messageDesc(file_v1_api, 28);
 
 /**
  * Digital signature
@@ -608,7 +746,7 @@ export type Signature = Message<"api.proto.v1.Signature"> & {
  * Use `create(SignatureSchema)` to create a new message.
  */
 export const SignatureSchema: GenMessage<Signature> = /*@__PURE__*/
-  messageDesc(file_v1_api, 23);
+  messageDesc(file_v1_api, 29);
 
 /**
  * Response message for getting validator set
@@ -629,7 +767,7 @@ export type GetValidatorSetResponse = Message<"api.proto.v1.GetValidatorSetRespo
  * Use `create(GetValidatorSetResponseSchema)` to create a new message.
  */
 export const GetValidatorSetResponseSchema: GenMessage<GetValidatorSetResponse> = /*@__PURE__*/
-  messageDesc(file_v1_api, 24);
+  messageDesc(file_v1_api, 30);
 
 /**
  * Response message for getting validator by address
@@ -650,7 +788,49 @@ export type GetValidatorByAddressResponse = Message<"api.proto.v1.GetValidatorBy
  * Use `create(GetValidatorByAddressResponseSchema)` to create a new message.
  */
 export const GetValidatorByAddressResponseSchema: GenMessage<GetValidatorByAddressResponse> = /*@__PURE__*/
-  messageDesc(file_v1_api, 25);
+  messageDesc(file_v1_api, 31);
+
+/**
+ * Response message for getting validator by key
+ *
+ * @generated from message api.proto.v1.GetValidatorByKeyResponse
+ */
+export type GetValidatorByKeyResponse = Message<"api.proto.v1.GetValidatorByKeyResponse"> & {
+  /**
+   * The validator
+   *
+   * @generated from field: api.proto.v1.Validator validator = 1;
+   */
+  validator?: Validator;
+};
+
+/**
+ * Describes the message api.proto.v1.GetValidatorByKeyResponse.
+ * Use `create(GetValidatorByKeyResponseSchema)` to create a new message.
+ */
+export const GetValidatorByKeyResponseSchema: GenMessage<GetValidatorByKeyResponse> = /*@__PURE__*/
+  messageDesc(file_v1_api, 32);
+
+/**
+ * Response message for getting local validator
+ *
+ * @generated from message api.proto.v1.GetLocalValidatorResponse
+ */
+export type GetLocalValidatorResponse = Message<"api.proto.v1.GetLocalValidatorResponse"> & {
+  /**
+   * The validator
+   *
+   * @generated from field: api.proto.v1.Validator validator = 1;
+   */
+  validator?: Validator;
+};
+
+/**
+ * Describes the message api.proto.v1.GetLocalValidatorResponse.
+ * Use `create(GetLocalValidatorResponseSchema)` to create a new message.
+ */
+export const GetLocalValidatorResponseSchema: GenMessage<GetLocalValidatorResponse> = /*@__PURE__*/
+  messageDesc(file_v1_api, 33);
 
 /**
  * @generated from message api.proto.v1.ExtraData
@@ -672,7 +852,7 @@ export type ExtraData = Message<"api.proto.v1.ExtraData"> & {
  * Use `create(ExtraDataSchema)` to create a new message.
  */
 export const ExtraDataSchema: GenMessage<ExtraData> = /*@__PURE__*/
-  messageDesc(file_v1_api, 26);
+  messageDesc(file_v1_api, 34);
 
 /**
  * Response message for getting validator set header
@@ -701,7 +881,7 @@ export type GetValidatorSetMetadataResponse = Message<"api.proto.v1.GetValidator
  * Use `create(GetValidatorSetMetadataResponseSchema)` to create a new message.
  */
 export const GetValidatorSetMetadataResponseSchema: GenMessage<GetValidatorSetMetadataResponse> = /*@__PURE__*/
-  messageDesc(file_v1_api, 27);
+  messageDesc(file_v1_api, 35);
 
 /**
  * Response message for getting validator set header
@@ -764,7 +944,7 @@ export type GetValidatorSetHeaderResponse = Message<"api.proto.v1.GetValidatorSe
  * Use `create(GetValidatorSetHeaderResponseSchema)` to create a new message.
  */
 export const GetValidatorSetHeaderResponseSchema: GenMessage<GetValidatorSetHeaderResponse> = /*@__PURE__*/
-  messageDesc(file_v1_api, 28);
+  messageDesc(file_v1_api, 36);
 
 /**
  * Validator information
@@ -813,7 +993,7 @@ export type Validator = Message<"api.proto.v1.Validator"> & {
  * Use `create(ValidatorSchema)` to create a new message.
  */
 export const ValidatorSchema: GenMessage<Validator> = /*@__PURE__*/
-  messageDesc(file_v1_api, 29);
+  messageDesc(file_v1_api, 37);
 
 /**
  * Cryptographic key
@@ -841,7 +1021,7 @@ export type Key = Message<"api.proto.v1.Key"> & {
  * Use `create(KeySchema)` to create a new message.
  */
 export const KeySchema: GenMessage<Key> = /*@__PURE__*/
-  messageDesc(file_v1_api, 30);
+  messageDesc(file_v1_api, 38);
 
 /**
  * Validator vault information
@@ -876,7 +1056,7 @@ export type ValidatorVault = Message<"api.proto.v1.ValidatorVault"> & {
  * Use `create(ValidatorVaultSchema)` to create a new message.
  */
 export const ValidatorVaultSchema: GenMessage<ValidatorVault> = /*@__PURE__*/
-  messageDesc(file_v1_api, 31);
+  messageDesc(file_v1_api, 39);
 
 /**
  * Request message for getting last committed epoch for a specific settlement chain
@@ -897,7 +1077,7 @@ export type GetLastCommittedRequest = Message<"api.proto.v1.GetLastCommittedRequ
  * Use `create(GetLastCommittedRequestSchema)` to create a new message.
  */
 export const GetLastCommittedRequestSchema: GenMessage<GetLastCommittedRequest> = /*@__PURE__*/
-  messageDesc(file_v1_api, 32);
+  messageDesc(file_v1_api, 40);
 
 /**
  * Response message for getting last committed epoch
@@ -923,7 +1103,7 @@ export type GetLastCommittedResponse = Message<"api.proto.v1.GetLastCommittedRes
  * Use `create(GetLastCommittedResponseSchema)` to create a new message.
  */
 export const GetLastCommittedResponseSchema: GenMessage<GetLastCommittedResponse> = /*@__PURE__*/
-  messageDesc(file_v1_api, 33);
+  messageDesc(file_v1_api, 41);
 
 /**
  * Request message for getting last committed epochs for all chains
@@ -940,7 +1120,7 @@ export type GetLastAllCommittedRequest = Message<"api.proto.v1.GetLastAllCommitt
  * Use `create(GetLastAllCommittedRequestSchema)` to create a new message.
  */
 export const GetLastAllCommittedRequestSchema: GenMessage<GetLastAllCommittedRequest> = /*@__PURE__*/
-  messageDesc(file_v1_api, 34);
+  messageDesc(file_v1_api, 42);
 
 /**
  * Response message for getting all last committed epochs
@@ -961,7 +1141,7 @@ export type GetLastAllCommittedResponse = Message<"api.proto.v1.GetLastAllCommit
  * Use `create(GetLastAllCommittedResponseSchema)` to create a new message.
  */
 export const GetLastAllCommittedResponseSchema: GenMessage<GetLastAllCommittedResponse> = /*@__PURE__*/
-  messageDesc(file_v1_api, 35);
+  messageDesc(file_v1_api, 43);
 
 /**
  * Settlement chain with its last committed epoch
@@ -989,7 +1169,7 @@ export type ChainEpochInfo = Message<"api.proto.v1.ChainEpochInfo"> & {
  * Use `create(ChainEpochInfoSchema)` to create a new message.
  */
 export const ChainEpochInfoSchema: GenMessage<ChainEpochInfo> = /*@__PURE__*/
-  messageDesc(file_v1_api, 36);
+  messageDesc(file_v1_api, 44);
 
 /**
  * @generated from message api.proto.v1.ValidatorSet
@@ -1050,7 +1230,7 @@ export type ValidatorSet = Message<"api.proto.v1.ValidatorSet"> & {
  * Use `create(ValidatorSetSchema)` to create a new message.
  */
 export const ValidatorSetSchema: GenMessage<ValidatorSet> = /*@__PURE__*/
-  messageDesc(file_v1_api, 37);
+  messageDesc(file_v1_api, 45);
 
 /**
  * Validator set status enumeration
@@ -1216,6 +1396,16 @@ export const SymbioticAPIService: GenService<{
     output: typeof GetAggregationProofResponseSchema;
   },
   /**
+   * Get aggregation proofs by epoch
+   *
+   * @generated from rpc api.proto.v1.SymbioticAPIService.GetAggregationProofsByEpoch
+   */
+  getAggregationProofsByEpoch: {
+    methodKind: "unary";
+    input: typeof GetAggregationProofsByEpochRequestSchema;
+    output: typeof GetAggregationProofsByEpochResponseSchema;
+  },
+  /**
    * Get current epoch
    *
    * @generated from rpc api.proto.v1.SymbioticAPIService.GetCurrentEpoch
@@ -1234,6 +1424,16 @@ export const SymbioticAPIService: GenService<{
     methodKind: "unary";
     input: typeof GetSignaturesRequestSchema;
     output: typeof GetSignaturesResponseSchema;
+  },
+  /**
+   * Get signature by epoch
+   *
+   * @generated from rpc api.proto.v1.SymbioticAPIService.GetSignaturesByEpoch
+   */
+  getSignaturesByEpoch: {
+    methodKind: "unary";
+    input: typeof GetSignaturesByEpochRequestSchema;
+    output: typeof GetSignaturesByEpochResponseSchema;
   },
   /**
    * Get signature request by request id
@@ -1274,6 +1474,26 @@ export const SymbioticAPIService: GenService<{
     methodKind: "unary";
     input: typeof GetValidatorByAddressRequestSchema;
     output: typeof GetValidatorByAddressResponseSchema;
+  },
+  /**
+   * Get validator by key
+   *
+   * @generated from rpc api.proto.v1.SymbioticAPIService.GetValidatorByKey
+   */
+  getValidatorByKey: {
+    methodKind: "unary";
+    input: typeof GetValidatorByKeyRequestSchema;
+    output: typeof GetValidatorByKeyResponseSchema;
+  },
+  /**
+   * Get local validator
+   *
+   * @generated from rpc api.proto.v1.SymbioticAPIService.GetLocalValidator
+   */
+  getLocalValidator: {
+    methodKind: "unary";
+    input: typeof GetLocalValidatorRequestSchema;
+    output: typeof GetLocalValidatorResponseSchema;
   },
   /**
    * Get validator set header
