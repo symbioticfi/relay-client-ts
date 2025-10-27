@@ -2,28 +2,41 @@
 
 /**
  * Basic usage example for the Symbiotic Relay TypeScript client.
- * 
+ *
  * This example demonstrates how to:
  * 1. Connect to a Symbiotic Relay server
  * 2. Get the current epoch
- * 3. Sign a message
- * 4. Retrieve aggregation proofs
- * 5. Get validator set information
- * 6. Sign and wait for completion via streaming
+ * 3. Calculate last committed epoch
+ * 4. Get validator set information
+ * 5. Sign a message
+ * 6. Retrieve aggregation proofs
+ * 7. Get individual signatures
+ * 8. Get aggregation proofs by epoch
+ * 9. Get signatures by epoch
+ * 10. Get validator by key
+ * 11. Get local validator
+ * 12. Listen to signatures via streaming
+ * 13. Listen to proofs via streaming
+ * 14. Listen to validator set changes via streaming
  */
 
 import { createClient } from "@connectrpc/connect";
 import { createGrpcTransport } from "@connectrpc/connect-node";
 import { SymbioticAPIService } from "@symbioticfi/relay-client-ts";
 import {
-  SigningStatus,
   GetCurrentEpochRequestSchema,
   GetLastAllCommittedRequestSchema,
   SignMessageRequestSchema,
   GetAggregationProofRequestSchema,
+  GetAggregationProofsByEpochRequestSchema,
   GetSignaturesRequestSchema,
+  GetSignaturesByEpochRequestSchema,
   GetValidatorSetRequestSchema,
-  SignMessageWaitRequestSchema,
+  GetValidatorByKeyRequestSchema,
+  GetLocalValidatorRequestSchema,
+  ListenSignaturesRequestSchema,
+  ListenProofsRequestSchema,
+  ListenValidatorSetRequestSchema,
   Signature,
   ChainEpochInfo,
 } from "@symbioticfi/relay-client-ts";
@@ -96,16 +109,65 @@ export class RelayClient {
   }
 
   /**
-   * Sign a message and wait for aggregation via streaming response.
+   * Get aggregation proofs by epoch.
    */
-  async *signMessageAndWait(keyTag: number, message: Uint8Array, requiredEpoch?: bigint) {
-    const request = create(SignMessageWaitRequestSchema, {
-      keyTag,
-      message,
-      requiredEpoch,
-    });
+  async getAggregationProofsByEpoch(epoch: bigint) {
+    const request = create(GetAggregationProofsByEpochRequestSchema, { epoch });
+    return await this.client.getAggregationProofsByEpoch(request);
+  }
 
-    const stream = await this.client.signMessageWait(request);
+  /**
+   * Get signatures by epoch.
+   */
+  async getSignaturesByEpoch(epoch: bigint) {
+    const request = create(GetSignaturesByEpochRequestSchema, { epoch });
+    return await this.client.getSignaturesByEpoch(request);
+  }
+
+  /**
+   * Get validator by key.
+   */
+  async getValidatorByKey(keyTag: number, onChainKey: Uint8Array, epoch?: bigint) {
+    const request = create(GetValidatorByKeyRequestSchema, { keyTag, onChainKey, epoch });
+    return await this.client.getValidatorByKey(request);
+  }
+
+  /**
+   * Get local validator.
+   */
+  async getLocalValidator(epoch?: bigint) {
+    const request = create(GetLocalValidatorRequestSchema, { epoch });
+    return await this.client.getLocalValidator(request);
+  }
+
+  /**
+   * Listen to signatures in real-time via streaming response.
+   */
+  async *listenSignatures(startEpoch?: bigint) {
+    const request = create(ListenSignaturesRequestSchema, { startEpoch });
+    const stream = await this.client.listenSignatures(request);
+    for await (const response of stream) {
+      yield response;
+    }
+  }
+
+  /**
+   * Listen to aggregation proofs in real-time via streaming response.
+   */
+  async *listenProofs(startEpoch?: bigint) {
+    const request = create(ListenProofsRequestSchema, { startEpoch });
+    const stream = await this.client.listenProofs(request);
+    for await (const response of stream) {
+      yield response;
+    }
+  }
+
+  /**
+   * Listen to validator set changes in real-time via streaming response.
+   */
+  async *listenValidatorSet(startEpoch?: bigint) {
+    const request = create(ListenValidatorSetRequestSchema, { startEpoch });
+    const stream = await this.client.listenValidatorSet(request);
     for await (const response of stream) {
       yield response;
     }
@@ -185,7 +247,7 @@ async function main() {
     try {
       const signaturesResponse = await client.getSignatures(signResponse.requestHash);
       console.log(`Number of signatures: ${signaturesResponse.signatures.length}`);
-      
+
       signaturesResponse.signatures.forEach((signature: Signature, index: number) => {
         console.log(`Signature ${index + 1}:`);
         console.log(`  - Signature length: ${signature.signature.length} bytes`);
@@ -196,51 +258,131 @@ async function main() {
       console.log(`Could not get signatures yet: ${(error as Error).message}`);
     }
 
-    // Example 7: Sign and wait for completion (streaming)
-    console.log("\n=== Sign and Wait (Streaming) ===");
-    const messageToSignStream = new TextEncoder().encode("Streaming example");
+    // Example 7: Get aggregation proofs by epoch
+    console.log("\n=== Getting Aggregation Proofs by Epoch ===");
+    try {
+      const proofsResponse = await client.getAggregationProofsByEpoch(BigInt(suggestedEpoch));
+      console.log(`Number of proofs: ${proofsResponse.aggregationProofs.length}`);
 
-    console.log("Starting streaming sign request... (ensure to run the script for all active relay servers)");
-    
-    streamLoop: for await (const response of client.signMessageAndWait(keyTag, messageToSignStream)) {
-      console.log(`Status: ${SigningStatus[response.status]}`);
-      console.log(`Request hash: ${response.requestHash}`);
-      console.log(`Epoch: ${response.epoch}`);
-
-      switch (response.status) {
-        case SigningStatus.PENDING:
-          console.log("Request created, waiting for signatures...");
-          break;
-
-        case SigningStatus.COMPLETED:
-          console.log("Signing completed!");
-          if (response.aggregationProof) {
-            const proof = response.aggregationProof;
-            console.log(`Proof length: ${proof.proof.length} bytes`);
-            console.log(`Verification type: ${proof.verificationType}`);
-          }
-          // Exit the streaming loop
-          break streamLoop;
-
-        case SigningStatus.FAILED:
-          console.log("Signing failed");
-          break streamLoop;
-
-        case SigningStatus.TIMEOUT:
-          console.log("Signing timed out");
-          break streamLoop;
-
-        case SigningStatus.UNSPECIFIED:
-          console.log("Unknown Signing status : unspecified");
-          break;
-
-        default:
-          console.log(`Unknown status: ${response.status}`);
-          break;
+      if (proofsResponse.aggregationProofs.length > 0) {
+        const firstProof = proofsResponse.aggregationProofs[0];
+        console.log(`First proof message hash length: ${firstProof.messageHash.length} bytes`);
+        console.log(`First proof data length: ${firstProof.proof.length} bytes`);
       }
+    } catch (error: unknown) {
+      console.log(`Could not get proofs by epoch: ${(error as Error).message}`);
+    }
 
-      // Add a small delay to make the output more readable
-      await new Promise(resolve => setTimeout(resolve, 100));
+    // Example 8: Get signatures by epoch
+    console.log("\n=== Getting Signatures by Epoch ===");
+    try {
+      const sigsByEpochResponse = await client.getSignaturesByEpoch(BigInt(suggestedEpoch));
+      console.log(`Number of signatures in epoch ${suggestedEpoch}: ${sigsByEpochResponse.signatures.length}`);
+    } catch (error: unknown) {
+      console.log(`Could not get signatures by epoch: ${(error as Error).message}`);
+    }
+
+    // Example 9: Get validator by key
+    console.log("\n=== Getting Validator by Key ===");
+    try {
+      if (validatorSet.validators.length > 0 && validatorSet.validators[0].keys.length > 0) {
+        const firstKey = validatorSet.validators[0].keys[0];
+        const validatorByKey = await client.getValidatorByKey(firstKey.tag, firstKey.payload);
+        console.log(`Validator operator: ${validatorByKey.validator?.operator}`);
+        console.log(`Validator voting power: ${validatorByKey.validator?.votingPower}`);
+      }
+    } catch (error: unknown) {
+      console.log(`Could not get validator by key: ${(error as Error).message}`);
+    }
+
+    // Example 10: Get local validator
+    console.log("\n=== Getting Local Validator ===");
+    try {
+      const localValidator = await client.getLocalValidator();
+      if (localValidator.validator) {
+        console.log(`Local validator operator: ${localValidator.validator.operator}`);
+        console.log(`Local validator voting power: ${localValidator.validator.votingPower}`);
+        console.log(`Local validator is active: ${localValidator.validator.isActive}`);
+        console.log(`Local validator keys count: ${localValidator.validator.keys.length}`);
+      }
+    } catch (error: unknown) {
+      console.log(`Could not get local validator: ${(error as Error).message}`);
+    }
+
+    // Example 11: Listen to signatures (streaming)
+    console.log("\n=== Listen to Signatures (Streaming) ===");
+    console.log("Starting signature stream for 5 seconds...");
+    try {
+      const signatureStreamTimeout = setTimeout(() => {
+        console.log("Signature stream timeout reached");
+      }, 5000);
+
+      let signatureCount = 0;
+      for await (const sigResponse of client.listenSignatures(BigInt(suggestedEpoch))) {
+        signatureCount++;
+        console.log(`Received signature ${signatureCount}:`);
+        console.log(`  Request ID: ${sigResponse.requestId}`);
+        console.log(`  Epoch: ${sigResponse.epoch}`);
+        console.log(`  Signature length: ${sigResponse.signature?.signature.length} bytes`);
+
+        if (signatureCount >= 3) {
+          clearTimeout(signatureStreamTimeout);
+          break;
+        }
+      }
+    } catch (error: unknown) {
+      console.log(`Signature stream ended: ${(error as Error).message}`);
+    }
+
+    // Example 12: Listen to proofs (streaming)
+    console.log("\n=== Listen to Proofs (Streaming) ===");
+    console.log("Starting proof stream for 5 seconds...");
+    try {
+      const proofStreamTimeout = setTimeout(() => {
+        console.log("Proof stream timeout reached");
+      }, 5000);
+
+      let proofCount = 0;
+      for await (const proofResponse of client.listenProofs(BigInt(suggestedEpoch))) {
+        proofCount++;
+        console.log(`Received proof ${proofCount}:`);
+        console.log(`  Request ID: ${proofResponse.requestId}`);
+        console.log(`  Epoch: ${proofResponse.epoch}`);
+        console.log(`  Proof length: ${proofResponse.aggregationProof?.proof.length} bytes`);
+
+        if (proofCount >= 3) {
+          clearTimeout(proofStreamTimeout);
+          break;
+        }
+      }
+    } catch (error: unknown) {
+      console.log(`Proof stream ended: ${(error as Error).message}`);
+    }
+
+    // Example 13: Listen to validator set changes (streaming)
+    console.log("\n=== Listen to Validator Set Changes (Streaming) ===");
+    console.log("Starting validator set stream for 5 seconds...");
+    try {
+      const validatorSetStreamTimeout = setTimeout(() => {
+        console.log("Validator set stream timeout reached");
+      }, 5000);
+
+      let vsCount = 0;
+      for await (const vsResponse of client.listenValidatorSet(BigInt(suggestedEpoch))) {
+        vsCount++;
+        console.log(`Received validator set update ${vsCount}:`);
+        console.log(`  Epoch: ${vsResponse.validatorSet?.epoch}`);
+        console.log(`  Version: ${vsResponse.validatorSet?.version}`);
+        console.log(`  Status: ${vsResponse.validatorSet?.status}`);
+        console.log(`  Validators count: ${vsResponse.validatorSet?.validators.length}`);
+
+        if (vsCount >= 2) {
+          clearTimeout(validatorSetStreamTimeout);
+          break;
+        }
+      }
+    } catch (error: unknown) {
+      console.log(`Validator set stream ended: ${(error as Error).message}`);
     }
 
   } catch (error: unknown) {
