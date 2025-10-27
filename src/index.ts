@@ -1,1 +1,1 @@
-export * from "./gen/v1/api_pb";
+export * from "./gen/api/proto/v1/api_pb";

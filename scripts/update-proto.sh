@@ -18,6 +18,6 @@ buf generate
 if [ ! -f src/index.ts ]; then
   mkdir -p src
   cat > src/index.ts <<'EOF'
-export * from "./gen/api/api_pb";
+export * from "./gen/api/proto/v1/api_pb";
 EOF
 fi
