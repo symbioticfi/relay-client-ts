@@ -1,6 +1,6 @@
 version: v2
 inputs:
-  - directory: api/proto
+  - directory: .
 managed:
   enabled: true
 plugins:
