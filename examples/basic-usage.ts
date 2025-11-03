@@ -13,11 +13,13 @@
  * 7. Get individual signatures
  * 8. Get aggregation proofs by epoch
  * 9. Get signatures by epoch
- * 10. Get validator by key
- * 11. Get local validator
- * 12. Listen to signatures via streaming
- * 13. Listen to proofs via streaming
- * 14. Listen to validator set changes via streaming
+ * 10. Get signature request IDs by epoch
+ * 11. Get signature requests by epoch
+ * 12. Get validator by key
+ * 13. Get local validator
+ * 14. Listen to signatures via streaming
+ * 15. Listen to proofs via streaming
+ * 16. Listen to validator set changes via streaming
  */
 
 import { createClient } from "@connectrpc/connect";
@@ -31,6 +33,8 @@ import {
   GetAggregationProofsByEpochRequestSchema,
   GetSignaturesRequestSchema,
   GetSignaturesByEpochRequestSchema,
+  GetSignatureRequestIDsByEpochRequestSchema,
+  GetSignatureRequestsByEpochRequestSchema,
   GetValidatorSetRequestSchema,
   GetValidatorByKeyRequestSchema,
   GetLocalValidatorRequestSchema,
@@ -38,6 +42,7 @@ import {
   ListenProofsRequestSchema,
   ListenValidatorSetRequestSchema,
   Signature,
+  SignatureRequest,
   ChainEpochInfo,
 } from "@symbioticfi/relay-client-ts";
 import { create } from "@bufbuild/protobuf";
@@ -122,6 +127,22 @@ export class RelayClient {
   async getSignaturesByEpoch(epoch: bigint) {
     const request = create(GetSignaturesByEpochRequestSchema, { epoch });
     return await this.client.getSignaturesByEpoch(request);
+  }
+
+  /**
+   * Get signature request IDs by epoch.
+   */
+  async getSignatureRequestIDsByEpoch(epoch: bigint) {
+    const request = create(GetSignatureRequestIDsByEpochRequestSchema, { epoch });
+    return await this.client.getSignatureRequestIDsByEpoch(request);
+  }
+
+  /**
+   * Get signature requests by epoch.
+   */
+  async getSignatureRequestsByEpoch(epoch: bigint) {
+    const request = create(GetSignatureRequestsByEpochRequestSchema, { epoch });
+    return await this.client.getSignatureRequestsByEpoch(request);
   }
 
   /**
@@ -234,7 +255,7 @@ async function main() {
       const proofResponse = await client.getAggregationProof(signResponse.requestHash);
       if (proofResponse.aggregationProof) {
         const proof = proofResponse.aggregationProof;
-        console.log(`Verification type: ${proof.verificationType}`);
+        console.log(`Request ID: ${proof.requestId}`);
         console.log(`Proof length: ${proof.proof.length} bytes`);
         console.log(`Message hash length: ${proof.messageHash.length} bytes`);
       }
@@ -250,6 +271,7 @@ async function main() {
 
       signaturesResponse.signatures.forEach((signature: Signature, index: number) => {
         console.log(`Signature ${index + 1}:`);
+        console.log(`  - Request ID: ${signature.requestId}`);
         console.log(`  - Signature length: ${signature.signature.length} bytes`);
         console.log(`  - Public key length: ${signature.publicKey.length} bytes`);
         console.log(`  - Message hash length: ${signature.messageHash.length} bytes`);
@@ -266,6 +288,7 @@ async function main() {
 
       if (proofsResponse.aggregationProofs.length > 0) {
         const firstProof = proofsResponse.aggregationProofs[0];
+        console.log(`First proof request ID: ${firstProof.requestId}`);
         console.log(`First proof message hash length: ${firstProof.messageHash.length} bytes`);
         console.log(`First proof data length: ${firstProof.proof.length} bytes`);
       }
@@ -282,7 +305,38 @@ async function main() {
       console.log(`Could not get signatures by epoch: ${(error as Error).message}`);
     }
 
-    // Example 9: Get validator by key
+    // Example 9: Get signature request IDs by epoch
+    console.log("\n=== Getting Signature Request IDs by Epoch ===");
+    try {
+      const requestIDsResponse = await client.getSignatureRequestIDsByEpoch(BigInt(suggestedEpoch));
+      console.log(`Number of request IDs in epoch ${suggestedEpoch}: ${requestIDsResponse.requestIds.length}`);
+
+      if (requestIDsResponse.requestIds.length > 0) {
+        console.log(`First request ID: ${requestIDsResponse.requestIds[0]}`);
+      }
+    } catch (error: unknown) {
+      console.log(`Could not get signature request IDs by epoch: ${(error as Error).message}`);
+    }
+
+    // Example 10: Get signature requests by epoch
+    console.log("\n=== Getting Signature Requests by Epoch ===");
+    try {
+      const requestsResponse = await client.getSignatureRequestsByEpoch(BigInt(suggestedEpoch));
+      console.log(`Number of signature requests in epoch ${suggestedEpoch}: ${requestsResponse.signatureRequests.length}`);
+
+      if (requestsResponse.signatureRequests.length > 0) {
+        const firstRequest = requestsResponse.signatureRequests[0];
+        console.log(`First request details:`);
+        console.log(`  - Request ID: ${firstRequest.requestId}`);
+        console.log(`  - Key tag: ${firstRequest.keyTag}`);
+        console.log(`  - Message length: ${firstRequest.message.length} bytes`);
+        console.log(`  - Required epoch: ${firstRequest.requiredEpoch}`);
+      }
+    } catch (error: unknown) {
+      console.log(`Could not get signature requests by epoch: ${(error as Error).message}`);
+    }
+
+    // Example 12: Get validator by key
     console.log("\n=== Getting Validator by Key ===");
     try {
       if (validatorSet.validators.length > 0 && validatorSet.validators[0].keys.length > 0) {
@@ -295,7 +349,7 @@ async function main() {
       console.log(`Could not get validator by key: ${(error as Error).message}`);
     }
 
-    // Example 10: Get local validator
+    // Example 13: Get local validator
     console.log("\n=== Getting Local Validator ===");
     try {
       const localValidator = await client.getLocalValidator();
@@ -309,7 +363,7 @@ async function main() {
       console.log(`Could not get local validator: ${(error as Error).message}`);
     }
 
-    // Example 11: Listen to signatures (streaming)
+    // Example 14: Listen to signatures (streaming)
     console.log("\n=== Listen to Signatures (Streaming) ===");
     console.log("Starting signature stream for 5 seconds...");
     try {
@@ -334,7 +388,7 @@ async function main() {
       console.log(`Signature stream ended: ${(error as Error).message}`);
     }
 
-    // Example 12: Listen to proofs (streaming)
+    // Example 15: Listen to proofs (streaming)
     console.log("\n=== Listen to Proofs (Streaming) ===");
     console.log("Starting proof stream for 5 seconds...");
     try {
@@ -359,7 +413,7 @@ async function main() {
       console.log(`Proof stream ended: ${(error as Error).message}`);
     }
 
-    // Example 13: Listen to validator set changes (streaming)
+    // Example 16: Listen to validator set changes (streaming)
     console.log("\n=== Listen to Validator Set Changes (Streaming) ===");
     console.log("Starting validator set stream for 5 seconds...");
     try {
