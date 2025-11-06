@@ -92,16 +92,16 @@ export class RelayClient {
   /**
    * Get aggregation proof for a specific request.
    */
-  async getAggregationProof(requestHash: string) {
-    const request = create(GetAggregationProofRequestSchema, { requestHash });
+  async getAggregationProof(requestId: string) {
+    const request = create(GetAggregationProofRequestSchema, { requestId });
     return await this.client.getAggregationProof(request);
   }
 
   /**
    * Get individual signatures for a request.
    */
-  async getSignatures(requestHash: string) {
-    const request = create(GetSignaturesRequestSchema, { requestHash });
+  async getSignatures(requestId: string) {
+    const request = create(GetSignaturesRequestSchema, { requestId });
     return await this.client.getSignatures(request);
   }
 
@@ -224,7 +224,12 @@ async function main() {
 
     // Example 3: Get validator set
     console.log("\n=== Getting Validator Set ===");
-    const validatorSet = await client.getValidatorSet();
+    const validatorSetResponse = await client.getValidatorSet();
+    if (!validatorSetResponse.validatorSet) {
+      console.log("No validator set found");
+      return;
+    }
+    let validatorSet = validatorSetResponse.validatorSet;
     console.log(`Validator set version: ${validatorSet.version}`);
     console.log(`Epoch: ${validatorSet.epoch}`);
     console.log(`Status: ${validatorSet.status}`);
@@ -246,13 +251,13 @@ async function main() {
     const keyTag = 15;
 
     const signResponse = await client.signMessage(keyTag, messageToSign);
-    console.log(`Request hash: ${signResponse.requestHash}`);
+    console.log(`Request ID: ${signResponse.requestId}`);
     console.log(`Epoch: ${signResponse.epoch}`);
 
     // Example 5: Get aggregation proof (this might fail if signing is not complete)
     console.log("\n=== Getting Aggregation Proof ===");
     try {
-      const proofResponse = await client.getAggregationProof(signResponse.requestHash);
+      const proofResponse = await client.getAggregationProof(signResponse.requestId);
       if (proofResponse.aggregationProof) {
         const proof = proofResponse.aggregationProof;
         console.log(`Request ID: ${proof.requestId}`);
@@ -266,7 +271,7 @@ async function main() {
     // Example 6: Get individual signatures
     console.log("\n=== Getting Individual Signatures ===");
     try {
-      const signaturesResponse = await client.getSignatures(signResponse.requestHash);
+      const signaturesResponse = await client.getSignatures(signResponse.requestId);
       console.log(`Number of signatures: ${signaturesResponse.signatures.length}`);
 
       signaturesResponse.signatures.forEach((signature: Signature, index: number) => {
