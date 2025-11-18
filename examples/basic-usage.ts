@@ -42,7 +42,6 @@ import {
   ListenProofsRequestSchema,
   ListenValidatorSetRequestSchema,
   Signature,
-  SignatureRequest,
   ChainEpochInfo,
 } from "@symbioticfi/relay-client-ts";
 import { create } from "@bufbuild/protobuf";
@@ -216,11 +215,12 @@ async function main() {
     const epochInfos = await client.getLastAllCommitted();
     for (const [chainId, info] of Object.entries(epochInfos.epochInfos)) {
       const chainInfo = info as ChainEpochInfo;
+      console.log(`Chain ${chainId}: Last committed epoch ${chainInfo.lastCommittedEpoch}`);
       if (suggestedEpoch === 0 || Number(chainInfo.lastCommittedEpoch) < suggestedEpoch) {
         suggestedEpoch = Number(chainInfo.lastCommittedEpoch);
       }
     }
-    console.log(`Last committed epoch: ${suggestedEpoch}`);
+    console.log(`Suggested epoch (minimum): ${suggestedEpoch}`);
 
     // Example 3: Get validator set
     console.log("\n=== Getting Validator Set ===");

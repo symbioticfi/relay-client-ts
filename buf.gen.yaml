@@ -1,6 +1,8 @@
 version: v2
 inputs:
   - directory: .
+  - module: buf.build/googleapis/googleapis
+  - module: buf.build/protocolbuffers/wellknowntypes
 managed:
   enabled: true
 plugins:
