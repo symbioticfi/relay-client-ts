@@ -2,6 +2,8 @@
 
 TypeScript client for the Symbiotic Relay built with Connect RPC and @bufbuild/protobuf.
 
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/symbioticfi/relay-client-ts)
+
 ## Usage 
 
 Create a transport with @connectrpc/connect-node and instantiate the SymbioticAPIService client with that transport.
